@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create NEWS</title>
+    {% load static %}
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 1.1em;
+        }
+
+        .text-danger {
+            font-size: 0.9em;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 150px; /* Increase the height */
+        }
+
+        .input-field textarea {
+            font-size: 1rem;
+            line-height: 1.5;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container my-5">
+    <h2 class="text-center">Create  News</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <!-- Title Name -->
+        <div class="input-field mb-4">
+            <label for="title" class="form-label">News Title</label>
+            <input type="text" id="title" name="title" class="form-control" required placeholder="Enter title name">
+        </div>
+
+        <!-- Event Image -->
+        <div class="input-field mb-4">
+            <label for="news_img" class="form-label">NEWS Image</label>
+            <input type="file" id="news_img" name="news_img" accept="image/*">
+        </div>
+
+        <!-- Event Date -->
+        <div class="input-field mb-4">
+            <label for="publication_date" class="form-label">Publication Date</label>
+            <input type="date" id="publication_date" name="publication_date" class="form-control" required>
+        </div>
+
+        <!-- Event Location -->
+        <div class="input-field mb-4">
+            <label for="author" class="form-label">Author</label>
+            <input type="text" id="author" name="author" class="form-control" required
+                   placeholder="Enter Auther">
+        </div>
+
+        <!-- Event Content -->
+        <div class="input-field mb-4">
+            <label for="content" class="form-label">Content</label>
+            <textarea id="content" name="content" class="form-control" rows="6"
+                      placeholder="Enter content"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary w-100">Submit</button>
+    </form>
+
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

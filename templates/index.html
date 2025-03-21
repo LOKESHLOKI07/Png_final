@@ -1,0 +1,603 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>SkyRich Business Network</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    {% load static %}
+    <!-- Favicons -->
+    <!--      <link href="{% static '/static_home/img/favicon.png' %}" rel="icon">-->
+    <link href="{% static '/static_home/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static '/static_home/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static '/static_home/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static '/static_home/vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static '/static_home/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static '/static_home/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="{% static '/static_home/css/main.css' %}" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+
+<header id="header" class="header fixed-top">
+
+    <div class="topbar d-flex align-items-center">
+        <div class="container d-flex justify-content-center justify-content-md-between">
+            <div class="contact-info d-flex align-items-center">
+                <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">pngmeetup@gmail.com</a></i>
+                <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91 94442 46652</span></i>
+            </div>
+            <div class="social-links d-none d-md-flex align-items-center">
+                <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+    </div><!-- End Top Bar -->
+
+    <div class="branding d-flex align-items-center">
+
+        <div class="container position-relative d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <img src="static\static_home\img\png_new.png" alt="" class="sitename">
+
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="#hero" class="active">Home<br></a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <!--                    <li><a href="#partner">Partner</a></li>-->
+
+
+                    <li><a href="{% url 'partners' %}">Our Partners</a></li>
+
+                     <li><a href="{% url 'news_list' %}">News</a></li>
+                     <li><a href="{% url 'event_list1' %}">Events</a></li>
+                     <li><a href="{% url 'index' %}">Contact</a></li>
+
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!--<main class="main">-->
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section accent-background">
+
+        <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+            <div class="row gy-5 justify-content-between">
+                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                    <h2><span>"A dynamic platform for entrepreneurs, professionals, and businesses to collaborate, learn, and thrive." </span>
+                    </h2>
+                    <!--                    <p>Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque-->
+                    <!--                        eum quaerat.</p>-->
+                    <div class="d-flex">
+                        <a href="{% url 'registration-form' %}" class="btn-get-started">Join Us</a>
+
+                    </div>
+                    <div class="col-lg-5 order-1 order-lg-2">
+                        <img src="static/img/hero-img.svg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="icon-boxes position-relative" data-aos="fade-up" data-aos-delay="200">
+                <div class="container position-relative">
+                    <div class="row gy-4 mt-5">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section><!-- /Hero Section -->
+
+   <!-- About Section -->
+    <section id="about" class="about section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>"Connect, Learn, and Grow with PNG"<br></h2>
+            <p style="font-family:Helvetica;font-size:20px">Professional Network Group (PNG) was founded by
+                Er. Raja B.E., Managing Partner of
+                RPR Group of Companies in October 2017 under the name D-Connect, a referral-based
+                network designed to connect entrepreneurs and businesses. From October 2017 to August
+                2024, D-Connect facilitated business referrals worth ₹5 Crores across multiple industries,
+                despite not having a formalized member base In oct 2024, D-Connect transitioned into a more structured
+                and dynamic platform, rebranding
+                as Professional Network Group (PNG). This transformation introduced premium
+                membership opportunities, providing enhanced networking, learning, and collaboration
+                experiences for our growing community.
+                Today, PNG continues to foster a vibrant environment where entrepreneurs, professionals, and
+                business leaders unite to grow, collaborate, and succeed."
+            </p>
+        </div><!-- End Section Title -->
+
+        <div class="container my-5">
+            <div class="row align-items-start">
+                <!-- Left Section: 70% -->
+                <div class="container section-title col-lg-7">
+                    <h2>Our Mission</h2>
+                    <img src="static/static_home/img/about.jpg" class="img-fluid rounded-4 shadow-lg mb-2"
+                         alt="Mission Image">
+                    <p style="font-family:Helvetica; font-size: 20px">
+                        "Our mission is to empower business owners and professionals to achieve sustainable growth,
+                        create new opportunities, and cultivate a culture of mutual success."
+                    </p>
+                </div>
+
+                <!-- Right Section: 30% -->
+
+                <div class="col-lg-4 px-3 text-start"
+                     style=" border-radius: 8px; display flex; justify-content: space-between; align-item: center; margin-top:1px">
+
+
+    <a href="{% url 'news_list' %}" style="text-align: center;">
+        <h2>News</h2>
+    </a>
+
+    <div style="max-height: 300px; overflow-y: auto;">
+        {% for news in news_articles %}
+        <!-- Event List Item -->
+        <div class="list-group mb-3">
+            <a href="{% url 'news_page' news.id %}">
+                <div class="list-group-item d-flex align-items-center">
+                    <!-- Event Image (fallback to default image if none exists) -->
+                    <img src="{{news.news_img.url}}" alt="{{ news.title }}"
+                         class="img-fluid rounded-3 me-3"
+                         style="width: 80px; height: 80px; object-fit: cover;">
+
+                    <!-- Event Name and Description -->
+                    <div>
+                        <h5 class="mb-1">{{news.title}}</h5>
+                        <!-- Truncate description to 10 words -->
+                        <p class="mb-0 text-muted">{{news.content|truncatewords:10}}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% empty %}
+        <p>No News available.</p>
+        {% endfor %}
+    </div>
+
+
+<a href="{% url 'event_list1' %}" style="text-align: center;">
+    <h2>Events</h2>
+</a>
+
+<div style="max-height: 300px; overflow-y: auto;">
+    {% for event in events %}
+    <div class="list-group mb-3">
+        <a href="{% url 'event_page' event.id %}">
+            <div class="list-group-item d-flex align-items-center">
+                <!-- Event Image -->
+                {% if event.event_img %}
+                    <img src="{{ event.event_img.url }}" alt="{{ event.name }}"
+                         class="img-fluid rounded-3 me-3"
+                         style="width: 80px; height: 80px; object-fit: cover;">
+                {% else %}
+                    <img src="path/to/default-image.jpg" alt="{{ event.name }}"
+                         class="img-fluid rounded-3 me-3"
+                         style="width: 80px; height: 80px; object-fit: cover;">
+                {% endif %}
+
+                <!-- Event Name and Description -->
+                <div>
+                    <h5 class="mb-1">{{ event.name }}</h5>
+                    <p class="mb-0 text-muted">{{ event.description|truncatewords:10 }}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% empty %}
+    <p>No events available.</p>
+    {% endfor %}
+</div>
+            </div>
+        </div>
+
+        <div class="container section-title" data-aos="fade-up" style="font-family:Helvetica;font-size:20px">
+            <h2>Our vision</h2>
+            <p >"Our vision is to become the leading
+                global platform for entrepreneurs and professionals, where ideas are nurtured, knowledge is
+                shared, and businesses thrive through collaboration. We aim to create an inclusive ecosystem
+                that empowers individuals and organizations to achieve sustainable growth, unlock new
+                opportunities, and form long-lasting partnerships." </p>
+        </div>
+
+        <div class="row align-items-center" data-aos="fade-up" data-aos-delay="250">
+            <!-- Image Section -->
+            <div class="col-lg-6">
+                <div class="content ps-0 ps-lg-5">
+                    <img src="static/static_home/img/about-2.jpg" class="img-fluid rounded-4 mb-4" alt="">
+                </div>
+            </div>
+            <!-- Text Section -->
+            <div class="col-lg-6">
+                <div class="content ps-0 ps-lg-5">
+                    <ul>
+                        <b style="font-family:Helvetica; font-size:18px">Developing Skills (D):</b>
+                        <li>
+                            <i class="bi bi-check-circle-fill fs-6"></i>
+                            <span style="font-family:Helvetica; font-size:18px">
+                        Workshops & Training: Providing a platform to enhance business and leadership skills in areas such as marketing, finance, leadership, and technology.
+                    </span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill fs-6"></i>
+                            <span style="font-family:Helvetica; font-size:18px">
+                        Peer-to-Peer Learning: Promoting mutual learning through networking and collaboration.
+                    </span>
+                        </li>
+                        <b style="font-family:Helvetica; font-size:18px">Knowledge Sharing (K):</b>
+                        <li>
+                            <i class="bi bi-check-circle-fill fs-6"></i>
+                            <span style="font-family:Helvetica; font-size:18px">
+                        Expert Talks & Panel Discussions: Facilitating a space for exchanging insights, experiences, and expertise.
+                    </span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill fs-6"></i>
+                            <span style="font-family:Helvetica; font-size:18px">
+                        Mentorship Programs: Connecting seasoned leaders with those eager to grow their knowledge and leadership skills.
+                    </span>
+                        </li>
+                        <b style="font-family:Helvetica; font-size:18px">Value Creation (V):</b>
+                        <li>
+                            <i class="bi bi-check-circle-fill fs-6"></i>
+                            <span style="font-family:Helvetica; font-size:18px">
+                        Collaborations & Partnerships: Encouraging entrepreneurs to create and exchange value through joint ventures, partnerships, and business referrals.
+                    </span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill fs-6"></i>
+                            <span style="font-family:Helvetica; font-size:18px">
+                        Business Opportunities: Building a network that supports collaboration and mutual growth.
+                    </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </section><!-- /About Section -->
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients section">
+
+        <div class="container">
+
+            <div class="swiper init-swiper">
+                <script type="application/json" class="swiper-config">
+                    {
+                        "loop": true,
+                        "speed": 600,
+                        "autoplay": {
+                            "delay": 5000
+                        },
+                        "slidesPerView": "auto",
+                        "pagination": {
+                            "el": ".swiper-pagination",
+                            "type": "bullets",
+                            "clickable": true
+                        },
+                        "breakpoints": {
+                            "320": {
+                                "slidesPerView": 2,
+                                "spaceBetween": 40
+                            },
+                            "480": {
+                                "slidesPerView": 3,
+                                "spaceBetween": 60
+                            },
+                            "640": {
+                                "slidesPerView": 4,
+                                "spaceBetween": 80
+                            },
+                            "992": {
+                                "slidesPerView": 6,
+                                "spaceBetween": 120
+                            }
+                        }
+                    }
+                </script>
+                <div class="container section-title" data-aos="fade-up">
+                    <h2>Partners</h2>
+                    <!--            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>-->
+                </div><!-- End Section Title -->
+
+                <div class="swiper-wrapper align-items-center">
+                    {% for company in companies %}
+                    <div class="swiper-slide">
+                        <a href="{% url 'company_landing' company.id %}">
+                            <img src="{{ company.logo.url }}" class="img-fluid" alt="{{ company.name }} Logo">
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section dark-background">
+        <div class="container">
+            <img src="static_old\static_home\img\testimonials\business.jpg" alt="">
+            <div class="content row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+                <div class="col-xl-10">
+                    <div class="text-center">
+                        <!--                        <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox play-btn"></a>-->
+                        <!--                        <h3>Call To Action</h3>-->
+                        <b style="font-family:'Comic sans MS';font-size:30px">Get involved</b>
+                        <p style="font-family:'Comic sans MS';font-size:20px">PNG invites professionals, entrepreneurs,
+                            business leaders, and supporters to join our
+                            community. Whether you're looking to expand your network, develop new skills, or create
+                            collaborative opportunities, PNG provides the ideal environment for growth and success.
+
+                        </p>
+                        <!--                        <a class="cta-btn" href="#">Call To Action</a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- /Call To Action Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>What we offer!</h2>
+        </div><!-- End Section Title -->
+
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-item  position-relative">
+                        <div class="icon">
+                            <i class="bi bi-activity"></i>
+                        </div>
+                        <h3 style="font-family:Helvetica; font-size: 30px">Regular Networking Meetups</h3>
+                        <p style="font-family:Helvetica; font-size: 20px">Insightful events that connect like-minded
+                            professionals and entrepreneurs.</p>
+
+                    </div>
+                </div><!-- End Service Item -->
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-item position-relative">
+                        <div class="icon">
+                            <i class="bi bi-broadcast"></i>
+                        </div>
+                        <h3 style="font-family:Helvetica; font-size: 30px">Workshops & Seminars</h3>
+                        <p style="font-family:Helvetica; font-size: 20px"> Skill-building and knowledge-sharing
+                            sessions led by industry experts and successful entrepreneurs.</p>
+                    </div>
+                </div><!-- End Service Item -->
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-item position-relative">
+                        <div class="icon">
+                            <i class="bi bi-easel"></i>
+                        </div>
+                        <h3 style="font-family:Helvetica; font-size: 30px">Collaborative Opportunities</h3>
+                        <p style="font-family:Helvetica; font-size: 20px">A platform for creating strategic
+                            partnerships and exploring new business ventures.</p>
+                        <!--                        <a href="service-details.html" class="readmore stretched-link">Read more <i-->
+                        <!--                                class="bi bi-arrow-right"></i></a>-->
+                    </div>
+                </div><!-- End Service Item -->
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-item position-relative">
+                        <div class="icon">
+                            <i class="bi bi-bounding-box-circles"></i>
+                        </div>
+                        <h3 style="font-family:Helvetica; font-size: 30px">Referral Programs</h3>
+                        <p style="font-family:Helvetica; font-size: 20px">A community-driven initiative for members
+                            to refer services and solutions, benefiting all involved.</p>
+                        <!--                        <a href="service-details.html" class="readmore stretched-link">Read more <i-->
+                        <!--                                class="bi bi-arrow-right"></i></a>-->
+                    </div>
+                </div><!-- End Service Item -->
+            </div>
+        </div>
+    </section>
+
+                <!-- Contact Section -->
+                <section id="contact" class="contact section">
+
+                    <!-- Section Title -->
+                    <div class="container section-title" data-aos="fade-up">
+                        <h2>Contact</h2>
+                        <!--            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>-->
+                    </div><!-- End Section Title -->
+
+                    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                        <div class="row gx-lg-0 gy-4">
+
+                            <div class="col-lg-4">
+                                <div class="info-container d-flex flex-column align-items-center justify-content-center">
+                                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                                        <i class="bi bi-geo-alt flex-shrink-0"></i>
+                                        <div>
+                                            <h3>Address</h3>
+                                            <p>Chennai</p>
+                                        </div>
+                                    </div><!-- End Info Item -->
+
+                                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                                        <i class="bi bi-telephone flex-shrink-0"></i>
+                                        <div>
+                                            <h3>Call Us</h3>
+                                            <p>+91 94442 46652 </p>
+                                        </div>
+                                    </div><!-- End Info Item -->
+
+                                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                                        <i class="bi bi-envelope flex-shrink-0"></i>
+                                        <div>
+                                            <h3>Email Us</h3>
+                                            <p>pngmeetup@gmail.com</p>
+                                        </div>
+                                    </div><!-- End Info Item -->
+
+                                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+                                        <i class="bi bi-clock flex-shrink-0"></i>
+                                        <div>
+                                            <h3>Open Hours:</h3>
+                                            <p>Mon-Sat: 11AM - 23PM</p>
+                                        </div>
+                                    </div><!-- End Info Item -->
+                                </div>
+                            </div>
+
+<div class="col-lg-8">
+    <form action="{% url 'new_index' %}" method="POST" class="php-email-form" data-aos="fade" data-aos-delay="100">
+        {% csrf_token %}
+        <div class="row gy-4">
+            <div class="col-md-6">
+                <input type="text" name="name" class="form-control" placeholder="Your Name">
+            </div>
+
+            <div class="col-md-6 ">
+                <input type="email" class="form-control" name="email"
+                       placeholder="Your Email">
+            </div>
+
+            <div class="col-md-12">
+                <input type="text" class="form-control" name="subject" placeholder="Subject">
+            </div>
+
+            <div class="col-md-12">
+            <textarea class="form-control" name="message" rows="8" placeholder="Message"></textarea>
+            </div>
+
+            <div class="col-md-12 text-center">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                <button type="submit">Send Message</button>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- End Contact Form -->
+
+        </div>
+
+    </div>
+
+</section><!-- /Contact Section -->
+
+<!--                </main>-->
+
+                <footer id="footer" class="footer accent-background">
+                    <div class="container footer-top">
+                        <div class="row gy-4">
+                            <div class="col-lg-5 col-md-12 footer-about">
+                                <a href="index.html" class="logo d-flex align-items-center">
+                                    <span class="sitename"> PNG</span>
+                                </a>
+                                <p>We aim to create an inclusive ecosystem that empowers individuals and organizations
+                                    to achieve
+                                    sustainable growth, unlock new opportunities, and form long-lasting
+                                    partnerships.</p>
+                                <div class="social-links d-flex mt-4">
+                                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                                    <a href=""><i class="bi bi-facebook"></i></a>
+                                    <a href=""><i class="bi bi-instagram"></i></a>
+                                    <a href=""><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-2 col-6 footer-links">
+                                <h4>Useful Links</h4>
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">About us</a></li>
+                                    <li><a href="#">Services</a></li>
+                                    <li><a href="#">Terms of service</a></li>
+                                    <li><a href="#">Privacy policy</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-2 col-6 footer-links">
+                                <h4>Our Services</h4>
+                                <ul>
+                                    <li><a href="#">Regular Networking Meetups</a></li>
+                                    <li><a href="#">Workshops & Seminars</a></li>
+                                    <li><a href="#">Collaborative Opportunities</a></li>
+                                    <li><a href="#">Marketing</a></li>
+                                    <li><a href="#">Referral Programs</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                                <h4>Contact Us</h4>
+                                <!--                <p>A108 Adam Street</p>-->
+                                <!--                <p>New York, NY 535022</p>-->
+                                <p>Chennai</p>
+                                <p class="mt-4"><strong>Phone:</strong> <span>+91 94442 46652 </span></p>
+                                <p><strong>Email:</strong> <span>pngmeetup@gmail.com</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container copyright text-center mt-4">
+                        <p>© <span>Copyright</span> <strong class="px-1 sitename">PNG</strong>
+                            <span>All Rights Reserved</span></p>
+                    </div>
+
+                </footer>
+
+                <!-- Scroll Top -->
+                <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+                        class="bi bi-arrow-up-short"></i></a>
+
+                <!-- Preloader -->
+                <div id="preloader"></div>
+
+<!-- Vendor JS Files -->
+<script src="{% static '/static_home/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static '/static_home/vendor/php-email-form/validate.js' %}"></script>
+<script src="{% static '/static_home/vendor/aos/aos.js' %}"></script>
+<script src="{% static '/static_home/vendor/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static '/static_home/vendor/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static '/static_home/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+<script src="{% static '/static_home/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static '/static_home/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+
+<!-- Main JS File -->
+<script src="{% static '/static_home/js/main.js' %}"></script>
+</body>
+
+</html>

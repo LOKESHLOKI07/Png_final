@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <title>Our Partners</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h2 {
+            margin-top: 150px;
+            font-size: 2rem;
+            color: #333;
+        }
+        .partner-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .partner-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            max-width: 150px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .partner-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .partner-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .partner-card p {
+            margin: 10px 0 0;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        .no-partners {
+            margin-top: 50px;
+            font-size: 1.2rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h2>Our Partners</h2>
+
+    <div class="partner-container">
+
+        {% for company in companies %}
+            <div class="partner-card">
+                <a href="{% url 'company_landing' company.id %}">
+                    <img src="{{ company.logo.url }}" alt="{{ company.name }} Logo">
+                </a>
+                <p>{{ company.name }}</p>
+            </div>
+        {% empty %}
+            <p class="no-partners">No partners available at the moment.</p>
+        {% endfor %}
+    </div>
+</body>
+{% endblock %}

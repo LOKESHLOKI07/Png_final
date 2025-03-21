@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      <title>Professional Network Group</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    {% load static %}
+<!--    &lt;!&ndash; Favicons &ndash;&gt;-->
+<!--    <link href="{% static '/static_home/img/apple-touch-icon.png' %}" rel="apple-touch-icon">-->
+
+<!--    &lt;!&ndash; Fonts &ndash;&gt;-->
+<!--    <link href="https://fonts.googleapis.com" rel="preconnect">-->
+<!--    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">-->
+
+<!--    &lt;!&ndash; Vendor CSS Files &ndash;&gt;-->
+<!--    <link href="{% static '/static_home/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static '/static_home/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static '/static_home/vendor/aos/aos.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static '/static_home/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static '/static_home/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">-->
+
+<!--    &lt;!&ndash; Main CSS File &ndash;&gt;-->
+<!--    <link href="{% static '/static_home/css/main.css' %}" rel="stylesheet">-->
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'png_static/lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'png_static/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+  
+<link href="{% static 'png_static/img/png_favicon.png' %}" rel="icon">
+    <link href="{% static 'png_static/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'png_static/css/style.css' %}" rel="stylesheet">
+    <link href="{% static '/static_home/css/main1.css' %}" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+<!-- Spinner Start -->
+<div id="spinner"
+     class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-grow text-primary" role="status"></div>
+</div>
+<!-- Spinner End -->
+
+<!-- Topbar Start -->
+<div class="container-fluid bg-dark py-2 d-none d-md-flex">
+    <div class="container">
+        <div class="d-flex justify-content-between topbar">
+            <div class="top-info">
+                <small class="me-3 text-white"><a href="#"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>Chennai</small>
+                <small class="me-3 text-white"><a href="#"><i class="fas fa-envelope me-2 text-secondary"></i></a>pngmeetup@gmail.com</small>
+            </div>
+            <!--            <div id="note" class="text-secondary d-none d-xl-flex"><small>Note : We help you to Grow your-->
+            <!--                Business</small></div>-->
+            <div class="top-link">
+                <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i
+                        class="fab fa-facebook-f text-primary"></i></a>
+                <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i
+                        class="fab fa-twitter text-primary"></i></a>
+                <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i
+                        class="fab fa-instagram text-primary"></i></a>
+                <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle me-0"><i
+                        class="fab fa-linkedin-in text-primary"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Topbar End -->
+
+<!-- Navbar Start -->
+<div class="container-fluid bg-primary">
+    <div class="container">
+        <nav class="navbar navbar-dark navbar-expand-lg py-0">
+            <a href="{% url 'new_index' %}" class="navbar-brand">
+                <!--                        <h1 class="text-white fw-bold d-block">High<span class="text-secondary">Tech</span> </h1>-->
+                <img src="{% static 'png_static\img\png_favicon.png' %}" style="height: 60px; width: 70px;">
+            </a>
+            <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
+                <div class="navbar-nav ms-auto mx-xl-auto p-0">
+                    <a href="{% url 'new_index' %}" class="nav-item nav-link">Home</a>
+                    <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+                    <a href="{% url 'new_index' %}#service" class="nav-item nav-link">Services</a>
+                    <a href="{% url 'partners_new' %}" class="nav-item nav-link">Partners</a>
+                    <a href="{% url 'events1' %}" class="nav-item nav-link">Events</a>
+                    <a href="{% url 'news_new' %}" class="nav-item nav-link">News</a>
+                    <!--                    <div class="nav-item dropdown">-->
+                    <!--                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>-->
+                    <!--                        <div class="dropdown-menu rounded">-->
+                    <!--                            <a href="blog.html" class="dropdown-item">Our Blog</a>-->
+                    <!--                            <a href="team.html" class="dropdown-item">Our Team</a>-->
+                    <!--                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>-->
+                    <!--                            <a href="404.html" class="dropdown-item">404 Page</a>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <a href="{% url 'new_index' %}#contact" class="nav-item nav-link">Contact</a>
+                </div>
+            </div>
+           <script>
+    // Get the current URL path
+    const currentPath = window.location.pathname;
+
+    // Loop through all navbar links
+    document.querySelectorAll('.nav-item.nav-link').forEach(link => {
+        // Check if the link's href matches the current path
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active'); // Add the active class
+        }
+    });
+</script>
+            <div class="d-none d-xl-flex flex-shirink-0">
+                <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
+                    <a href="" class="position-relative animated tada infinite">
+                        <i class="fa fa-phone-alt text-black fa-2x"></i>
+                        <div class="position-absolute" style="top: -7px; left: 20px;">
+                            <span><i class="fa fa-comment-dots text-secondary"></i></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="d-flex flex-column pe-4">
+                    <span class="text-white-50">Have any questions?</span>
+                    <span class="text-black ">Call: +91 9444246652</span>
+                </div>
+
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- Navbar End -->
+<!--    <header id="header" class="header fixed-top">-->
+<!--        <div class="topbar d-flex align-items-center">-->
+<!--            <div class="container d-flex justify-content-center justify-content-md-between">-->
+<!--                <div class="contact-info d-flex align-items-center">-->
+<!--                    <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">pngmeetup@gmail.com</a></i>-->
+<!--                    <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91 94442 46652</span></i>-->
+<!--                </div>-->
+<!--                <div class="social-links d-none d-md-flex align-items-center">-->
+<!--                    <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>-->
+<!--                    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>-->
+<!--                    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>-->
+<!--                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>&lt;!&ndash; End Top Bar &ndash;&gt;-->
+
+<!--        <div class="branding d-flex align-items-center">-->
+<!--            <div class="container position-relative d-flex align-items-center justify-content-between">-->
+<!--                <a href="index.html" class="logo d-flex align-items-center">-->
+<!--                    <img src="{% static 'static\static_home\img\png_new.png' %}" alt="" class="sitename">-->
+<!--                </a>-->
+
+<!--                <nav id="navmenu" class="navmenu">-->
+<!--                    <ul>-->
+<!--                        <li><a href="{% url 'new_index' %}">Home</a></li>-->
+<!--                        <li><a href="{% url 'new_index' %}">About</a></li>-->
+<!--                        <li><a href="{% url 'new_index' %}">Services</a></li>-->
+
+<!--                        <li><a href="{% url 'partners' %}">Our Partners</a></li>-->
+<!--                        <li><a href="{% url 'news_new' %}">News</a></li>-->
+<!--                        <li><a href="{% url 'events1' %}">Events</a></li>-->
+<!--                          <li><a href="{% url 'new_index' %}">Contact</a></li>-->
+<!--&lt;!&ndash;                        <li class="dropdown"><a href="#"><span>Logins</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <ul>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li><a href="{% url 'admin_login' %}">Admin Login</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li><a href="{% url 'login' %}">Login</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </li>&ndash;&gt;-->
+<!--                    </ul>-->
+<!--                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>-->
+<!--                </nav>-->
+
+<!--            </div>-->
+<!--        </div>-->
+
+<!--    </header>-->
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+<!--    &lt;!&ndash; Footer Section &ndash;&gt;-->
+<!-- <footer id="footer" class="footer accent-background">-->
+
+<!--                    <div class="container footer-top">-->
+<!--                        <div class="row gy-4">-->
+<!--                            <div class="col-lg-5 col-md-12 footer-about">-->
+<!--                                <a href="index.html" class="logo d-flex align-items-center">-->
+<!--                                    <span class="sitename"> PNG</span>-->
+<!--                                </a>-->
+<!--                                <p style="text-align:left">We aim to create an inclusive ecosystem that empowers individuals and organizations-->
+<!--                                    to achieve-->
+<!--                                    sustainable growth, unlock new opportunities, and form long-lasting-->
+<!--                                    partnerships.</p>-->
+<!--                                <div class="social-links d-flex mt-4">-->
+<!--                                    <a href=""><i class="bi bi-twitter-x"></i></a>-->
+<!--                                    <a href=""><i class="bi bi-facebook"></i></a>-->
+<!--                                    <a href=""><i class="bi bi-instagram"></i></a>-->
+<!--                                    <a href=""><i class="bi bi-linkedin"></i></a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+<!--                            <div class="col-lg-2 col-6 footer-links">-->
+<!--                                <h4>Useful Links</h4>-->
+<!--                                <ul>-->
+<!--                                    <li><a href="#">Home</a></li>-->
+<!--                                    <li><a href="#">About us</a></li>-->
+<!--                                    <li><a href="#">Services</a></li>-->
+<!--                                    <li><a href="#">Terms of service</a></li>-->
+<!--                                    <li><a href="#">Privacy policy</a></li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+
+<!--                            <div class="col-lg-2 col-6 footer-links">-->
+<!--                                <h4>Our Services</h4>-->
+<!--                                <ul>-->
+<!--                                    <li><a href="#">Regular Networking Meetups</a></li>-->
+<!--                                    <li><a href="#">Workshops & Seminars</a></li>-->
+<!--                                    <li><a href="#">Collaborative Opportunities</a></li>-->
+<!--                                    <li><a href="#">Marketing</a></li>-->
+<!--                                    <li><a href="#">Referral Programs</a></li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+
+<!--                            <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">-->
+<!--                                <h4>Contact Us</h4>-->
+<!--                                &lt;!&ndash;                <p>A108 Adam Street</p>&ndash;&gt;-->
+<!--                                &lt;!&ndash;                <p>New York, NY 535022</p>&ndash;&gt;-->
+<!--                                <p>Chennai</p>-->
+<!--                                <p class="mt-4"><strong>Phone:</strong> <span>+91 94442 46652 </span></p>-->
+<!--                                <p><strong>Email:</strong> <span>pngmeetup@gmail.com</span></p>-->
+<!--                            </div>-->
+
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="container copyright text-center mt-4">-->
+<!--                        <p>© <span>Copyright</span> <strong class="px-1 sitename">PNG</strong>-->
+<!--                            <span>All Rights Reserved</span></p>-->
+
+<!--                    </div>-->
+
+<!--                </footer>-->
+
+<!--    &lt;!&ndash; Scripts &ndash;&gt;-->
+<!--    <script src="{% static '/static_home/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>-->
+<!--    <script src="{% static '/static_home/js/main.js' %}"></script>-->
+
+<!-- Footer Start -->
+<div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
+    <div class="container pt-5 pb-4">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <a href="{% url 'new_index' %}">
+                    <img src="{% static 'png_static\img\png_favicon.png' %}" style="height: 60px; width: 70px;">
+                </a>
+                <p class="mt-4 text-light">Today, PNG continues to foster a vibrant environment where
+                    entrepreneurs,
+                    professionals, and business leaders unite to grow, collaborate, and succeed.</p>
+                <div class="d-flex hightech-link">
+                    <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
+                            class="fab fa-facebook-f text-primary"></i></a>
+                    <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
+                            class="fab fa-twitter text-primary"></i></a>
+                    <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
+                            class="fab fa-instagram text-primary"></i></a>
+                    <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i
+                            class="fab fa-linkedin-in text-primary"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h2 class="h3 text-secondary">Short Link</h2>
+                <div class="mt-4 d-flex flex-column short-link justify-content-center">
+                    <a href="{% url 'about' %}" class="mb-2 text-white"><i
+                            class="fas fa-angle-right text-secondary me-2"></i>About
+                        us</a>
+                    <a href="{% url 'new_index' %}" class="mb-2 text-white"><i
+                            class="fas fa-angle-right text-secondary me-2"></i>Services</a>
+                    <a href="{% url 'partners_new' %}" class="mb-2 text-white"><i
+                            class="fas fa-angle-right text-secondary me-2"></i>Partners</a>
+                    <a href="{% url 'news_new' %}" class="mb-2 text-white"><i
+                            class="fas fa-angle-right text-secondary me-2"></i>News</a>
+                    <a href="{% url 'events1' %}" class="mb-2 text-white"><i
+                            class="fas fa-angle-right text-secondary me-2"></i>Events</a>
+                    <a href="{% url 'new_index' %}" class="mb-2 text-white"><i
+                            class="fas fa-angle-right text-secondary me-2"></i>Contact</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <a href="#" class="h3 text-secondary">Contact Us</a>
+                <div class="text-white mt-4 d-flex flex-column contact-link">
+                    <a href="#!" class="pb-3 text-light border-bottom border-primary"><i
+                            class="fas fa-map-marker-alt text-secondary me-2"></i> Chennai</a>
+                    <a href="#!" class="py-3 text-light border-bottom border-primary"><i
+                            class="fas fa-phone-alt text-secondary me-2"></i> +91 9444246652</a>
+                    <a href="#!" class="py-3 text-light border-bottom border-primary"><i
+                            class="fas fa-envelope text-secondary me-2"></i> pngmeetup@gmail.com</a>
+                </div>
+            </div>
+        </div>
+        <hr class="text-light mt-5 mb-4">
+        <div class="row text-center">
+                <span class="text-light"><a href="#" class="text-secondary"><i
+                        class="fas fa-copyright text-secondary me-2"></i>PNG</a>, All right reserved.</span>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"><i
+        class="fa fa-arrow-up text-white"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'png_static/lib/wow/wow.min.js' %}"></script>
+<script src="{% static 'png_static/lib/easing/easing.min.js' %}"></script>
+<script src="{% static 'png_static/lib/waypoints/waypoints.min.js' %}"></script>
+<script src="{% static 'png_static/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+<!-- Template Javascript -->
+<script src="{% static 'png_static/js/main.js' %}"></script>
+
+</body>
+
+</html>
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta content="width=device-width, initial-scale=1.0" name="viewport">-->
+<!--    <title>SkyRich Business Network</title>-->
+<!--    <meta name="description" content="">-->
+<!--    <meta name="keywords" content="">-->
+<!--    {% load static %}-->
+<!--    &lt;!&ndash; Favicons &ndash;&gt;-->
+<!--    &lt;!&ndash;      <link href="{% static '/static_home/img/favicon.png' %}" rel="icon">&ndash;&gt;-->
+<!--    <link href="{% static '/static_home/img/apple-touch-icon.png' %}" rel="apple-touch-icon">-->
+
+<!--    &lt;!&ndash; Fonts &ndash;&gt;-->
+<!--    <link href="https://fonts.googleapis.com" rel="preconnect">-->
+<!--    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"-->
+<!--          rel="stylesheet">-->
+
+<!--    &lt;!&ndash; Vendor CSS Files &ndash;&gt;-->
+<!--    <link href="{% static '/static_home/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static '/static_home/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static '/static_home/vendor/aos/aos.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static '/static_home/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static '/static_home/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">-->
+
+<!--    &lt;!&ndash; Main CSS File &ndash;&gt;-->
+<!--    <link href="{% static '/static_home/css/main.css' %}" rel="stylesheet">-->
+
+<!--</head>-->
+
+<!--<body class="index-page">-->
+
+<!--<header id="header" class="header fixed-top">-->
+
+<!--    <div class="topbar d-flex align-items-center">-->
+<!--        <div class="container d-flex justify-content-center justify-content-md-between">-->
+<!--            <div class="contact-info d-flex align-items-center">-->
+<!--                <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">pngmeetup@gmail.com</a></i>-->
+<!--                <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91 94442 46652</span></i>-->
+<!--            </div>-->
+<!--            <div class="social-links d-none d-md-flex align-items-center">-->
+<!--                <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>-->
+<!--                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>-->
+<!--                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>-->
+<!--                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>&lt;!&ndash; End Top Bar &ndash;&gt;-->
+
+<!--    <div class="branding d-flex align-items-center">-->
+
+<!--        <div class="container position-relative d-flex align-items-center justify-content-between">-->
+<!--            <a href="index.html" class="logo d-flex align-items-center">-->
+<!--                &lt;!&ndash; Uncomment the line below if you also wish to use an image logo &ndash;&gt;-->
+<!--                <img src="static\static_home\img\png_new.png" alt="" class="sitename">-->
+
+<!--            </a>-->
+
+<!--            <nav id="navmenu" class="navmenu">-->
+<!--                <ul>-->
+<!--                    <li><a href="#hero" class="active">Home<br></a></li>-->
+<!--                    <li><a href="#about">About</a></li>-->
+<!--                    <li><a href="#services">Services</a></li>-->
+<!--                    &lt;!&ndash;                    <li><a href="#partner">Partner</a></li>&ndash;&gt;-->
+
+
+<!--                    <li><a href="{% url 'partners' %}">Our Partners</a></li>-->
+
+<!--                     <li><a href="{% url 'news_list' %}">News</a></li>-->
+<!--                     <li><a href="{% url 'event_list1' %}">Events</a></li>-->
+<!--                     <li><a href="{% url 'new_index' %}">Contact</a></li>-->
+
+<!--                </ul>-->
+<!--                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>-->
+<!--            </nav>-->
+
+<!--        </div>-->
+
+<!--    </div>-->
+
+<!--</header>-->
+
+<!--<main class="main">-->
+
+<!--    &lt;!&ndash; Hero Section &ndash;&gt;-->
+<!--    <section id="hero" class="hero section accent-background">-->
+
+<!--        <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">-->
+<!--            <div class="row gy-5 justify-content-between">-->
+<!--                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">-->
+<!--                    <h2><span>"A dynamic platform for entrepreneurs, professionals, and businesses to collaborate, learn, and thrive." </span>-->
+<!--                    </h2>-->
+<!--                    &lt;!&ndash;                    <p>Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        eum quaerat.</p>&ndash;&gt;-->
+<!--                    <div class="d-flex">-->
+<!--                        <a href="{% url 'registration-form' %}" class="btn-get-started">Join Us</a>-->
+
+<!--                    </div>-->
+<!--                    <div class="col-lg-5 order-1 order-lg-2">-->
+<!--                        <img src="static/img/hero-img.svg" class="img-fluid" alt="">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="icon-boxes position-relative" data-aos="fade-up" data-aos-delay="200">-->
+<!--                <div class="container position-relative">-->
+<!--                    <div class="row gy-4 mt-5">-->
+
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--    </section>&lt;!&ndash; /Hero Section &ndash;&gt;-->
+
+<!--   &lt;!&ndash; About Section &ndash;&gt;-->
+<!--    <section id="about" class="about section">-->
+
+<!--        &lt;!&ndash; Section Title &ndash;&gt;-->
+<!--        <div class="container section-title" data-aos="fade-up">-->
+<!--            <h2>"Connect, Learn, and Grow with PNG"<br></h2>-->
+<!--            <p style="font-family:Helvetica;font-size:20px">Professional Network Group (PNG) was founded by-->
+<!--                Er. Raja B.E., Managing Partner of-->
+<!--                RPR Group of Companies in October 2017 under the name D-Connect, a referral-based-->
+<!--                network designed to connect entrepreneurs and businesses. From October 2017 to August-->
+<!--                2024, D-Connect facilitated business referrals worth ₹5 Crores across multiple industries,-->
+<!--                despite not having a formalized member base In oct 2024, D-Connect transitioned into a more structured-->
+<!--                and dynamic platform, rebranding-->
+<!--                as Professional Network Group (PNG). This transformation introduced premium-->
+<!--                membership opportunities, providing enhanced networking, learning, and collaboration-->
+<!--                experiences for our growing community.-->
+<!--                Today, PNG continues to foster a vibrant environment where entrepreneurs, professionals, and-->
+<!--                business leaders unite to grow, collaborate, and succeed."-->
+<!--            </p>-->
+<!--        </div>&lt;!&ndash; End Section Title &ndash;&gt;-->
+
+<!--        <div class="container my-5">-->
+<!--            <div class="row align-items-start">-->
+<!--                &lt;!&ndash; Left Section: 70% &ndash;&gt;-->
+<!--                <div class="container section-title col-lg-7">-->
+<!--                    <h2>Our Mission</h2>-->
+<!--                    <img src="static/static_home/img/about.jpg" class="img-fluid rounded-4 shadow-lg mb-2"-->
+<!--                         alt="Mission Image">-->
+<!--                    <p style="font-family:Helvetica; font-size: 20px">-->
+<!--                        "Our mission is to empower business owners and professionals to achieve sustainable growth,-->
+<!--                        create new opportunities, and cultivate a culture of mutual success."-->
+<!--                    </p>-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash; Right Section: 30% &ndash;&gt;-->
+
+<!--                <div class="col-lg-4 px-3 text-start"-->
+<!--                     style=" border-radius: 8px; display flex; justify-content: space-between; align-item: center; margin-top:1px">-->
+
+
+<!--    <a href="{% url 'news_list' %}" style="text-align: center;">-->
+<!--        <h2>News</h2>-->
+<!--    </a>-->
+
+<!--    <div style="max-height: 300px; overflow-y: auto;">-->
+<!--        {% for news in news_articles %}-->
+<!--        &lt;!&ndash; Event List Item &ndash;&gt;-->
+<!--        <div class="list-group mb-3">-->
+<!--            <a href="{% url 'news_page' news.id %}">-->
+<!--                <div class="list-group-item d-flex align-items-center">-->
+<!--                    &lt;!&ndash; Event Image (fallback to default image if none exists) &ndash;&gt;-->
+<!--                    <img src="{{news.news_img.url}}" alt="{{ news.title }}"-->
+<!--                         class="img-fluid rounded-3 me-3"-->
+<!--                         style="width: 80px; height: 80px; object-fit: cover;">-->
+
+<!--                    &lt;!&ndash; Event Name and Description &ndash;&gt;-->
+<!--                    <div>-->
+<!--                        <h5 class="mb-1">{{news.title}}</h5>-->
+<!--                        &lt;!&ndash; Truncate description to 10 words &ndash;&gt;-->
+<!--                        <p class="mb-0 text-muted">{{news.content|truncatewords:10}}</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        {% empty %}-->
+<!--        <p>No News available.</p>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+
+
+<!--<a href="{% url 'event_list1' %}" style="text-align: center;">-->
+<!--    <h2>Events</h2>-->
+<!--</a>-->
+
+<!--<div style="max-height: 300px; overflow-y: auto;">-->
+<!--    {% for event in events %}-->
+<!--    <div class="list-group mb-3">-->
+<!--        <a href="{% url 'event_page' event.id %}">-->
+<!--            <div class="list-group-item d-flex align-items-center">-->
+<!--                &lt;!&ndash; Event Image &ndash;&gt;-->
+<!--                {% if event.event_img %}-->
+<!--                    <img src="{{ event.event_img.url }}" alt="{{ event.name }}"-->
+<!--                         class="img-fluid rounded-3 me-3"-->
+<!--                         style="width: 80px; height: 80px; object-fit: cover;">-->
+<!--                {% else %}-->
+<!--                    <img src="path/to/default-image.jpg" alt="{{ event.name }}"-->
+<!--                         class="img-fluid rounded-3 me-3"-->
+<!--                         style="width: 80px; height: 80px; object-fit: cover;">-->
+<!--                {% endif %}-->
+
+<!--                &lt;!&ndash; Event Name and Description &ndash;&gt;-->
+<!--                <div>-->
+<!--                    <h5 class="mb-1">{{ event.name }}</h5>-->
+<!--                    <p class="mb-0 text-muted">{{ event.description|truncatewords:10 }}</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </a>-->
+<!--    </div>-->
+<!--    {% empty %}-->
+<!--    <p>No events available.</p>-->
+<!--    {% endfor %}-->
+<!--</div>-->
+
+
+<!--            </div>-->
+<!--        </div>-->
+
+
+<!--        <div class="container section-title" data-aos="fade-up" style="font-family:Helvetica;font-size:20px">-->
+<!--            <h2>Our vision</h2>-->
+<!--            <p >"Our vision is to become the leading-->
+<!--                global platform for entrepreneurs and professionals, where ideas are nurtured, knowledge is-->
+<!--                shared, and businesses thrive through collaboration. We aim to create an inclusive ecosystem-->
+<!--                that empowers individuals and organizations to achieve sustainable growth, unlock new-->
+<!--                opportunities, and form long-lasting partnerships." </p>-->
+<!--        </div>-->
+
+<!--        <div class="row align-items-center" data-aos="fade-up" data-aos-delay="250">-->
+<!--            &lt;!&ndash; Image Section &ndash;&gt;-->
+<!--            <div class="col-lg-6">-->
+<!--                <div class="content ps-0 ps-lg-5">-->
+<!--                    <img src="static/static_home/img/about-2.jpg" class="img-fluid rounded-4 mb-4" alt="">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; Text Section &ndash;&gt;-->
+<!--            <div class="col-lg-6">-->
+<!--                <div class="content ps-0 ps-lg-5">-->
+<!--                    <ul>-->
+<!--                        <b style="font-family:Helvetica; font-size:18px">Developing Skills (D):</b>-->
+<!--                        <li>-->
+<!--                            <i class="bi bi-check-circle-fill fs-6"></i>-->
+<!--                            <span style="font-family:Helvetica; font-size:18px">-->
+<!--                        Workshops & Training: Providing a platform to enhance business and leadership skills in areas such as marketing, finance, leadership, and technology.-->
+<!--                    </span>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <i class="bi bi-check-circle-fill fs-6"></i>-->
+<!--                            <span style="font-family:Helvetica; font-size:18px">-->
+<!--                        Peer-to-Peer Learning: Promoting mutual learning through networking and collaboration.-->
+<!--                    </span>-->
+<!--                        </li>-->
+<!--                        <b style="font-family:Helvetica; font-size:18px">Knowledge Sharing (K):</b>-->
+<!--                        <li>-->
+<!--                            <i class="bi bi-check-circle-fill fs-6"></i>-->
+<!--                            <span style="font-family:Helvetica; font-size:18px">-->
+<!--                        Expert Talks & Panel Discussions: Facilitating a space for exchanging insights, experiences, and expertise.-->
+<!--                    </span>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <i class="bi bi-check-circle-fill fs-6"></i>-->
+<!--                            <span style="font-family:Helvetica; font-size:18px">-->
+<!--                        Mentorship Programs: Connecting seasoned leaders with those eager to grow their knowledge and leadership skills.-->
+<!--                    </span>-->
+<!--                        </li>-->
+<!--                        <b style="font-family:Helvetica; font-size:18px">Value Creation (V):</b>-->
+<!--                        <li>-->
+<!--                            <i class="bi bi-check-circle-fill fs-6"></i>-->
+<!--                            <span style="font-family:Helvetica; font-size:18px">-->
+<!--                        Collaborations & Partnerships: Encouraging entrepreneurs to create and exchange value through joint ventures, partnerships, and business referrals.-->
+<!--                    </span>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <i class="bi bi-check-circle-fill fs-6"></i>-->
+<!--                            <span style="font-family:Helvetica; font-size:18px">-->
+<!--                        Business Opportunities: Building a network that supports collaboration and mutual growth.-->
+<!--                    </span>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        </div>-->
+<!--    </section>&lt;!&ndash; /About Section &ndash;&gt;-->
+
+<!--    &lt;!&ndash; Clients Section &ndash;&gt;-->
+<!--    <section id="clients" class="clients section">-->
+
+<!--        <div class="container">-->
+
+<!--            <div class="swiper init-swiper">-->
+<!--                <script type="application/json" class="swiper-config">-->
+<!--                    {-->
+<!--                        "loop": true,-->
+<!--                        "speed": 600,-->
+<!--                        "autoplay": {-->
+<!--                            "delay": 5000-->
+<!--                        },-->
+<!--                        "slidesPerView": "auto",-->
+<!--                        "pagination": {-->
+<!--                            "el": ".swiper-pagination",-->
+<!--                            "type": "bullets",-->
+<!--                            "clickable": true-->
+<!--                        },-->
+<!--                        "breakpoints": {-->
+<!--                            "320": {-->
+<!--                                "slidesPerView": 2,-->
+<!--                                "spaceBetween": 40-->
+<!--                            },-->
+<!--                            "480": {-->
+<!--                                "slidesPerView": 3,-->
+<!--                                "spaceBetween": 60-->
+<!--                            },-->
+<!--                            "640": {-->
+<!--                                "slidesPerView": 4,-->
+<!--                                "spaceBetween": 80-->
+<!--                            },-->
+<!--                            "992": {-->
+<!--                                "slidesPerView": 6,-->
+<!--                                "spaceBetween": 120-->
+<!--                            }-->
+<!--                        }-->
+<!--                    }-->
+<!--                </script>-->
+<!--                <div class="container section-title" data-aos="fade-up">-->
+<!--                    <h2>Partners</h2>-->
+<!--                    &lt;!&ndash;            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>&ndash;&gt;-->
+<!--                </div>&lt;!&ndash; End Section Title &ndash;&gt;-->
+
+<!--                <div class="swiper-wrapper align-items-center">-->
+<!--                    {% for company in companies %}-->
+<!--                    <div class="swiper-slide">-->
+<!--                        <a href="{% url 'company_landing' company.id %}">-->
+<!--                            <img src="{{ company.logo.url }}" class="img-fluid" alt="{{ company.name }} Logo">-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                    {% endfor %}-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+<!--    </section>&lt;!&ndash; /Clients Section &ndash;&gt;-->
+
+
+<!--    &lt;!&ndash;    </div>&ndash;&gt;-->
+
+<!--    &lt;!&ndash;    </div>&ndash;&gt;-->
+
+<!--    &lt;!&ndash;    </div>&ndash;&gt;-->
+
+<!--    &lt;!&ndash;    </div>&ndash;&gt;-->
+
+<!--    &lt;!&ndash;    </section>&lt;!&ndash; /Stats Section &ndash;&gt;&ndash;&gt;-->
+
+<!--    &lt;!&ndash; Call To Action Section &ndash;&gt;-->
+<!--    <section id="call-to-action" class="call-to-action section dark-background">-->
+
+<!--        <div class="container">-->
+<!--            <img src="static_old\static_home\img\testimonials\business.jpg" alt="">-->
+<!--            <div class="content row justify-content-center" data-aos="zoom-in" data-aos-delay="100">-->
+<!--                <div class="col-xl-10">-->
+<!--                    <div class="text-center">-->
+<!--                        &lt;!&ndash;                        <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox play-btn"></a>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                        <h3>Call To Action</h3>&ndash;&gt;-->
+<!--                        <b style="font-family:'Comic sans MS';font-size:30px">Get involved</b>-->
+<!--                        <p style="font-family:'Comic sans MS';font-size:20px">PNG invites professionals, entrepreneurs,-->
+<!--                            business leaders, and supporters to join our-->
+<!--                            community. Whether you're looking to expand your network, develop new skills, or create-->
+<!--                            collaborative opportunities, PNG provides the ideal environment for growth and success.-->
+
+<!--                        </p>-->
+<!--                        &lt;!&ndash;                        <a class="cta-btn" href="#">Call To Action</a>&ndash;&gt;-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--    </section>&lt;!&ndash; /Call To Action Section &ndash;&gt;-->
+
+<!--    &lt;!&ndash; Services Section &ndash;&gt;-->
+<!--    <section id="services" class="services section">-->
+
+<!--        &lt;!&ndash; Section Title &ndash;&gt;-->
+<!--        <div class="container section-title" data-aos="fade-up">-->
+<!--            <h2>What we offer!</h2>-->
+<!--            &lt;!&ndash;            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>&ndash;&gt;-->
+<!--        </div>&lt;!&ndash; End Section Title &ndash;&gt;-->
+
+<!--        <div class="container">-->
+
+<!--            <div class="row gy-4">-->
+
+<!--                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">-->
+<!--                    <div class="service-item  position-relative">-->
+<!--                        <div class="icon">-->
+<!--                            <i class="bi bi-activity"></i>-->
+<!--                        </div>-->
+<!--                        <h3 style="font-family:Helvetica; font-size: 30px">Regular Networking Meetups</h3>-->
+<!--                        <p style="font-family:Helvetica; font-size: 20px">Insightful events that connect like-minded-->
+<!--                            professionals and entrepreneurs.</p>-->
+
+<!--                    </div>-->
+<!--                </div>&lt;!&ndash; End Service Item &ndash;&gt;-->
+
+<!--                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">-->
+<!--                    <div class="service-item position-relative">-->
+<!--                        <div class="icon">-->
+<!--                            <i class="bi bi-broadcast"></i>-->
+<!--                        </div>-->
+<!--                        <h3 style="font-family:Helvetica; font-size: 30px">Workshops & Seminars</h3>-->
+<!--                        <p style="font-family:Helvetica; font-size: 20px"> Skill-building and knowledge-sharing-->
+<!--                            sessions led by industry experts and successful entrepreneurs.</p>-->
+
+<!--                    </div>-->
+<!--                </div>&lt;!&ndash; End Service Item &ndash;&gt;-->
+
+<!--                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">-->
+<!--                    <div class="service-item position-relative">-->
+<!--                        <div class="icon">-->
+<!--                            <i class="bi bi-easel"></i>-->
+<!--                        </div>-->
+<!--                        <h3 style="font-family:Helvetica; font-size: 30px">Collaborative Opportunities</h3>-->
+<!--                        <p style="font-family:Helvetica; font-size: 20px">A platform for creating strategic-->
+<!--                            partnerships and exploring new business ventures.</p>-->
+<!--                        &lt;!&ndash;                        <a href="service-details.html" class="readmore stretched-link">Read more <i&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                class="bi bi-arrow-right"></i></a>&ndash;&gt;-->
+<!--                    </div>-->
+<!--                </div>&lt;!&ndash; End Service Item &ndash;&gt;-->
+
+<!--                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">-->
+<!--                    <div class="service-item position-relative">-->
+<!--                        <div class="icon">-->
+<!--                            <i class="bi bi-bounding-box-circles"></i>-->
+<!--                        </div>-->
+<!--                        <h3 style="font-family:Helvetica; font-size: 30px">Referral Programs</h3>-->
+<!--                        <p style="font-family:Helvetica; font-size: 20px">A community-driven initiative for members-->
+<!--                            to refer services and solutions, benefiting all involved.</p>-->
+<!--                        &lt;!&ndash;                        <a href="service-details.html" class="readmore stretched-link">Read more <i&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                class="bi bi-arrow-right"></i></a>&ndash;&gt;-->
+<!--                    </div>-->
+<!--                </div>&lt;!&ndash; End Service Item &ndash;&gt;-->
+
+
+
+
+<!--                &lt;!&ndash; Contact Section &ndash;&gt;-->
+<!--                <section id="contact" class="contact section">-->
+
+<!--                    &lt;!&ndash; Section Title &ndash;&gt;-->
+<!--                    <div class="container section-title" data-aos="fade-up">-->
+<!--                        <h2>Contact</h2>-->
+<!--                        &lt;!&ndash;            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>&ndash;&gt;-->
+<!--                    </div>&lt;!&ndash; End Section Title &ndash;&gt;-->
+
+<!--                    <div class="container" data-aos="fade-up" data-aos-delay="100">-->
+
+<!--                        <div class="row gx-lg-0 gy-4">-->
+
+<!--                            <div class="col-lg-4">-->
+<!--                                <div class="info-container d-flex flex-column align-items-center justify-content-center">-->
+<!--                                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">-->
+<!--                                        <i class="bi bi-geo-alt flex-shrink-0"></i>-->
+<!--                                        <div>-->
+<!--                                            <h3>Address</h3>-->
+<!--                                            <p>Chennai</p>-->
+<!--                                        </div>-->
+<!--                                    </div>&lt;!&ndash; End Info Item &ndash;&gt;-->
+
+<!--                                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">-->
+<!--                                        <i class="bi bi-telephone flex-shrink-0"></i>-->
+<!--                                        <div>-->
+<!--                                            <h3>Call Us</h3>-->
+<!--                                            <p>+91 94442 46652 </p>-->
+<!--                                        </div>-->
+<!--                                    </div>&lt;!&ndash; End Info Item &ndash;&gt;-->
+
+<!--                                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">-->
+<!--                                        <i class="bi bi-envelope flex-shrink-0"></i>-->
+<!--                                        <div>-->
+<!--                                            <h3>Email Us</h3>-->
+<!--                                            <p>pngmeetup@gmail.com</p>-->
+<!--                                        </div>-->
+<!--                                    </div>&lt;!&ndash; End Info Item &ndash;&gt;-->
+
+<!--                                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">-->
+<!--                                        <i class="bi bi-clock flex-shrink-0"></i>-->
+<!--                                        <div>-->
+<!--                                            <h3>Open Hours:</h3>-->
+<!--                                            <p>Mon-Sat: 11AM - 23PM</p>-->
+<!--                                        </div>-->
+<!--                                    </div>&lt;!&ndash; End Info Item &ndash;&gt;-->
+
+<!--                                </div>-->
+
+<!--                            </div>-->
+
+<!--                            <div class="col-lg-8">-->
+<!--                                <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade"-->
+<!--                                      data-aos-delay="100">-->
+<!--                                    <div class="row gy-4">-->
+
+<!--                                        <div class="col-md-6">-->
+<!--                                            <input type="text" name="name" class="form-control" placeholder="Your Name"-->
+<!--                                                   required="">-->
+<!--                                        </div>-->
+
+<!--                                        <div class="col-md-6 ">-->
+<!--                                            <input type="email" class="form-control" name="email"-->
+<!--                                                   placeholder="Your Email"-->
+<!--                                                   required="">-->
+<!--                                        </div>-->
+
+<!--                                        <div class="col-md-12">-->
+<!--                                            <input type="text" class="form-control" name="subject" placeholder="Subject"-->
+<!--                                                   required="">-->
+<!--                                        </div>-->
+
+<!--                                        <div class="col-md-12">-->
+<!--                                <textarea class="form-control" name="message" rows="8" placeholder="Message"-->
+<!--                                          required=""></textarea>-->
+<!--                                        </div>-->
+
+<!--                                        <div class="col-md-12 text-center">-->
+<!--                                            <div class="loading">Loading</div>-->
+<!--                                            <div class="error-message"></div>-->
+<!--                                            <div class="sent-message">Your message has been sent. Thank you!</div>-->
+
+<!--                                            <button type="submit">Send Message</button>-->
+<!--                                        </div>-->
+
+<!--                                    </div>-->
+<!--                                </form>-->
+<!--                            </div>&lt;!&ndash; End Contact Form &ndash;&gt;-->
+
+<!--                        </div>-->
+
+<!--                    </div>-->
+
+<!--                </section>&lt;!&ndash; /Contact Section &ndash;&gt;-->
+
+<!--                &lt;!&ndash;</main>&ndash;&gt;-->
+
+<!--                <footer id="footer" class="footer accent-background">-->
+
+<!--                    <div class="container footer-top">-->
+<!--                        <div class="row gy-4">-->
+<!--                            <div class="col-lg-5 col-md-12 footer-about">-->
+<!--                                <a href="index.html" class="logo d-flex align-items-center">-->
+<!--                                    <span class="sitename"> PNG</span>-->
+<!--                                </a>-->
+<!--                                <p>We aim to create an inclusive ecosystem that empowers individuals and organizations-->
+<!--                                    to achieve-->
+<!--                                    sustainable growth, unlock new opportunities, and form long-lasting-->
+<!--                                    partnerships.</p>-->
+<!--                                <div class="social-links d-flex mt-4">-->
+<!--                                    <a href=""><i class="bi bi-twitter-x"></i></a>-->
+<!--                                    <a href=""><i class="bi bi-facebook"></i></a>-->
+<!--                                    <a href=""><i class="bi bi-instagram"></i></a>-->
+<!--                                    <a href=""><i class="bi bi-linkedin"></i></a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+<!--                            <div class="col-lg-2 col-6 footer-links">-->
+<!--                                <h4>Useful Links</h4>-->
+<!--                                <ul>-->
+<!--                                    <li><a href="#">Home</a></li>-->
+<!--                                    <li><a href="#">About us</a></li>-->
+<!--                                    <li><a href="#">Services</a></li>-->
+<!--                                    <li><a href="#">Terms of service</a></li>-->
+<!--                                    <li><a href="#">Privacy policy</a></li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+
+<!--                            <div class="col-lg-2 col-6 footer-links">-->
+<!--                                <h4>Our Services</h4>-->
+<!--                                <ul>-->
+<!--                                    <li><a href="#">Regular Networking Meetups</a></li>-->
+<!--                                    <li><a href="#">Workshops & Seminars</a></li>-->
+<!--                                    <li><a href="#">Collaborative Opportunities</a></li>-->
+<!--                                    <li><a href="#">Marketing</a></li>-->
+<!--                                    <li><a href="#">Referral Programs</a></li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+
+<!--                            <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">-->
+<!--                                <h4>Contact Us</h4>-->
+<!--                                &lt;!&ndash;                <p>A108 Adam Street</p>&ndash;&gt;-->
+<!--                                &lt;!&ndash;                <p>New York, NY 535022</p>&ndash;&gt;-->
+<!--                                <p>Chennai</p>-->
+<!--                                <p class="mt-4"><strong>Phone:</strong> <span>+91 94442 46652 </span></p>-->
+<!--                                <p><strong>Email:</strong> <span>pngmeetup@gmail.com</span></p>-->
+<!--                            </div>-->
+
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="container copyright text-center mt-4">-->
+<!--                        <p>© <span>Copyright</span> <strong class="px-1 sitename">PNG</strong>-->
+<!--                            <span>All Rights Reserved</span></p>-->
+
+<!--                    </div>-->
+
+<!--                </footer>-->
+
+<!--                &lt;!&ndash; Scroll Top &ndash;&gt;-->
+<!--                <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i-->
+<!--                        class="bi bi-arrow-up-short"></i></a>-->
+
+<!--                &lt;!&ndash; Preloader &ndash;&gt;-->
+<!--                <div id="preloader"></div>-->
+
+<!--                &lt;!&ndash; Vendor JS Files &ndash;&gt;-->
+<!--                <script src="{% static '/static_home/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>-->
+<!--                <script src="{% static '/static_home/vendor/php-email-form/validate.js' %}"></script>-->
+<!--                <script src="{% static '/static_home/vendor/aos/aos.js' %}"></script>-->
+<!--                <script src="{% static '/static_home/vendor/glightbox/js/glightbox.min.js' %}"></script>-->
+<!--                <script src="{% static '/static_home/vendor/swiper/swiper-bundle.min.js' %}"></script>-->
+<!--                <script src="{% static '/static_home/vendor/purecounter/purecounter_vanilla.js' %}"></script>-->
+<!--                <script src="{% static '/static_home/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>-->
+<!--                <script src="{% static '/static_home/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>-->
+
+<!--                &lt;!&ndash; Main JS File &ndash;&gt;-->
+<!--                <script src="{% static '/static_home/js/main.js' %}"></script>-->
+<!--</body>-->
+
+<!--</html>-->

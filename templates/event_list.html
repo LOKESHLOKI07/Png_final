@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events List</title>
+</head>
+{% block content %}
+<style>
+    h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: #cf2030;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .div-table{
+            padding-right:40px;
+            padding-bottom:40px;
+            padding-left:40px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #cf2030;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .actions a {
+            margin: 0 10px;
+        }
+
+        .add-company-button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #cf2030;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .add-company-button:hover {
+            color: #fff;
+        }
+
+            .button-group{
+                padding-left:40px;
+            }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        .button-group {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .responsive-table {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+        }
+        .div-table{
+            padding:0px;
+        }
+
+        th, td {
+            font-size: 0.9rem;
+            padding: 8px;
+        }
+
+        .actions a {
+            margin: 0 3px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .add-company-button {
+            font-size: 0.9rem;
+            padding: 8px 10px;
+        }
+
+        .div-table{
+            padding:0px;
+        }
+
+        th, td {
+            font-size: 0.8rem;
+            padding: 6px;
+        }
+    }
+</style>
+<body>
+
+<h1>Events List</h1>
+<div class="button-group">
+    <a class="add-company-button" href="{% url 'create_event' %}">Add New Event</a>
+    <a class="add-company-button" href="{% url 'news_list' %}">View News</a>
+    <a class="add-company-button" href="{% url 'company_list' %}">View Company</a>
+</div>
+
+
+<div class="div-table">
+<table class="responsive-table">
+    <thead>
+        <tr>
+            <th>S.No</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for event in events %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ event.name }}</td>
+            <td>{{ event.description|truncatechars:50 }}</td>
+            <td>{{ event.location }}</td>
+            <td>{{ event.date }}</td>
+            <td class="actions">
+                <a href="{% url 'event_update' event.id %}">Edit</a> |
+                <a href="{% url 'event_delete' event.id %}">Delete</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="6" class="text-center">No events available.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+</body>
+{% endblock %}
+</html>

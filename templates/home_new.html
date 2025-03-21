@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>Professional Network Group</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'static_new/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Include Bootstrap Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'static_new/assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'static_new/assets/css/templatemo-edu-meeting.css' %}">
+    <link rel="stylesheet" href="{% static 'static_new/assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'static_new/assets/css/lightbox.css' %}">
+</head>
+
+<body>
+
+<!-- Sub Header -->
+<div class="sub-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-sm-8">
+                <div class="left-content">
+                    <!--                    <p>This is an educational <em>HTML CSS</em> template by TemplateMo website.</p>-->
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-4">
+                <div class="right-icons">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-link"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                        <img
+                                src="/static/static_home/img/png_new.png"
+                                alt="Site Logo"
+                                style="width: 120px; height: 80px; display: block; margin: 0 auto;"
+                        >
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+                        <li><a href="meetings.html">About</a></li>
+                        <li class="scroll-to-section"><a href="#apply">Services</a></li>
+                        <li class="scroll-to-section"><a href="#apply">Our Partners</a></li>
+                        <li class="scroll-to-section"><a href="{% url 'index' %}">News</a></li>
+                        <li class=""><a href="{% url 'meetings' %}">Events</a></li>
+                        <li class="scroll-to-section"><a href="#contact">Contact Us</a></li>
+                        <!--                        <li class="has-sub">-->
+                        <!--                            <a href="javascript:void(0)">Our Partners</a>-->
+                        <!--                            <ul class="sub-menu">-->
+                        <!--                                <li><a href="meetings.html">News</a></li>-->
+                        <!--                                <li><a href="meeting-details.html">Events</a></li>-->
+                        <!--                            </ul>-->
+                        <!--                        </li>-->
+
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ***** Header Area End ***** -->
+
+<!-- ***** Main Banner Area Start ***** -->
+<section class="section main-banner" id="top" data-section="section1">
+    <video autoplay muted loop id="bg-video">
+        <source src="{% static 'static_new/assets/images/course-video.mp4' %}" type="video/mp4"/>
+    </video>
+
+    <div class="video-overlay header-text">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="caption">
+                        <!--                        <h6>Hello Students</h6>-->
+                        <h2>Welcome to Professional Network Group</h2>
+                        <p>A dynamic platform for entrepreneurs, professionals, and businesses to collaborate, learn,
+                            and thrive.</p>
+                        <div class="main-button-red">
+                            <div><a href="{% url 'register' %}">Join Us Now!</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Main Banner Area End ***** -->
+
+<!--<section class="services">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-lg-12">-->
+<!--                <div class="owl-service-item owl-carousel">-->
+
+<!--                    <div class="item">-->
+<!--                        <div class="icon">-->
+<!--                            <img src="{% static 'static_new/assets/images/service-icon-01.png' %}" alt="">-->
+<!--                        </div>-->
+<!--                        <div class="down-content">-->
+<!--                            <h4>Best Education</h4>-->
+<!--                            <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non-->
+<!--                                vestibulum.</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="item">-->
+<!--                        <div class="icon">-->
+<!--                            <img src="{% static 'static_new/assets/images/service-icon-02.png' %}" alt="">-->
+<!--                        </div>-->
+<!--                        <div class="down-content">-->
+<!--                            <h4>Best Teachers</h4>-->
+<!--                            <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non-->
+<!--                                vestibulum.</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="item">-->
+<!--                        <div class="icon">-->
+<!--                            <img src="{% static 'static_new/assets/images/service-icon-03.png' %}" alt="">-->
+<!--                        </div>-->
+<!--                        <div class="down-content">-->
+<!--                            <h4>Best Students</h4>-->
+<!--                            <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non-->
+<!--                                vestibulum.</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="item">-->
+<!--                        <div class="icon">-->
+<!--                            <img src="{% static 'static_new/assets/images/service-icon-02.png' %}" alt="">-->
+<!--                        </div>-->
+<!--                        <div class="down-content">-->
+<!--                            <h4>Online Meeting</h4>-->
+<!--                            <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non-->
+<!--                                vestibulum.</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="item">-->
+<!--                        <div class="icon">-->
+<!--                            <img src="{% static 'static_new/assets/images/service-icon-03.png' %}" alt="">-->
+<!--                        </div>-->
+<!--                        <div class="down-content">-->
+<!--                            <h4>Best Networking</h4>-->
+<!--                            <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non-->
+<!--                                vestibulum.</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<!--  <section class="upcoming-meetings" id="meetings" style="margin-top: -200px; border: 2px solid #fff;">-->
+<!--    <div class="row" style="display: flex; gap: 20px;">-->
+<!--        <div class="section-heading">-->
+<!--                    <h2>Events & News</h2>-->
+<!--                </div>-->
+<!--        &lt;!&ndash; Left section with two divs &ndash;&gt;-->
+<!--        <div style="width: 30%; display: flex; flex-direction: column; gap: -50px;">-->
+<!--            &lt;!&ndash; First div inside the left section &ndash;&gt;-->
+
+<!--            <div class="categories">-->
+<!--                <h4>Meeting Categories</h4>-->
+<!--                <ul>-->
+<!--                    <li><a href="#">Sed tempus enim leo</a></li>-->
+<!--                    <li><a href="#">Aenean molestie quis</a></li>-->
+<!--                    <li><a href="#">Cras et metus vestibulum</a></li>-->
+<!--                    <li><a href="#">Nam et condimentum</a></li>-->
+<!--                    <li><a href="#">Phasellus nec sapien</a></li>-->
+<!--                </ul>-->
+<!--                <div class="main-button-red">-->
+<!--                    <a href="meetings.html">All Upcoming Meetings</a>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash; Second div inside the left section &ndash;&gt;-->
+<!--            <div class="categories">-->
+<!--                <h4>Upcoming Events</h4>-->
+<!--                <ul>-->
+<!--                    <li><a href="#">Sed tempus enim leo</a></li>-->
+<!--                    <li><a href="#">Aenean molestie quis</a></li>-->
+<!--                    <li><a href="#">Cras et metus vestibulum</a></li>-->
+<!--                    <li><a href="#">Nam et condimentum</a></li>-->
+<!--                    <li><a href="#">Phasellus nec sapien</a></li>-->
+<!--                </ul>-->
+<!--                <div class="main-button-red">-->
+<!--                    <a href="events.html">View All Events</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; Right section with one div &ndash;&gt;-->
+<!--        <div style="width: 60%;">-->
+<!--            <div class="meeting-item">-->
+<!--                <div class="thumb">-->
+<!--                    <div class="price">-->
+<!--                        <span>$22.00</span>-->
+<!--                    </div>-->
+<!--                    <a href="meeting-details.html">-->
+<!--                        <img src="{% static 'static_new/assets/images/meeting-01.jpg' %}" alt="New Lecturer Meeting" style="width: 100%;">-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--                <div class="down-content">-->
+<!--                    <div class="date">-->
+<!--                        <h6>Nov <span>10</span></h6>-->
+<!--                    </div>-->
+<!--                    <a href="meeting-details.html"><h4>New Lecturers Meeting</h4></a>-->
+<!--                    <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+
+<section class="upcoming-meetings" id="meetings" style="margin-top: -20px; padding: 20px; ">
+    <!--    <div class="container">-->
+    <div class="row" style="">
+        <div class="container section-title section-heading">
+            <h2>Our Mission</h2>
+        </div>
+        <div class="col-lg-4">
+            <div class="categories">
+                <h4 style="text-align: center">News</h4>
+                {% for news in news_articles %}
+                <div class="list-group mb-3">
+                    <a href="{% url 'news_page' news.id %}">
+                        <div class="list-group-item d-flex align-items-center">
+                            <!-- Event Image (fallback to default image if none exists) -->
+                            <img
+                                    src="{{ news.news_img.url }}"
+                                    alt="{{ news.title }}"
+                                    class="img-fluid rounded-3 me-3"
+                                    style="width: 80px; height: 80px; object-fit: cover;">
+
+                            <!-- Event Name and Description -->
+                            <div>
+                                <h5 class="mb-1">{{ news.title }}</h5>
+                                <!-- Truncate description to 10 words -->
+                                <p class="mb-0 text-muted">{{ news.content|truncatewords:10 }}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% empty %}
+                <p>No News available.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+
+        <div class="col-lg-7">
+            <div class="meeting-item">
+                <div class="thumb"><img
+                        src="{% static 'static_new/assets/images/meeting-01.jpg' %}"
+                        alt="New Lecturer Meeting">
+                </div>
+                <div class="down-content">
+                    <p>PNG is a dynamic platform committed to connecting entrepreneurs and professionals through regular
+                        meetups centered around three core pillars: Developing Skills, Knowledge Sharing, and Value
+                        Creation (DKV). Our mission is to empower business owners and professionals to achieve
+                        sustainable growth, create new opportunities, and cultivate a culture of mutual success.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row" style="margin-top: -20px;">
+        <div class="col-lg-4">
+            <div class="categories">
+                <h4 style="text-align: center">Events</h4>
+                {% for news in news_articles %}
+                <div class="list-group mb-3">
+                    <a href="{% url 'news_page' news.id %}">
+                        <div class="list-group-item d-flex align-items-center">
+                            <img
+                                    src="{{ news.news_img.url }}"
+                                    alt="{{ news.title }}"
+                                    class="img-fluid rounded-3 me-3"
+                                    style="width: 80px; height: 80px; object-fit: cover;">
+                            <div>
+                                <h5 class="mb-1">{{ news.title }}</h5>
+                                <!-- Truncate description to 10 words -->
+                                <p class="mb-0 text-muted">{{ news.content|truncatewords:10 }}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% empty %}
+                <p>No News available.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!--            <div class="col-lg-8" style="border: 2px solid red">-->
+        <!--                    <div class="content ps-0 ps-lg-5">-->
+        <!--                        <ul>-->
+        <!--                            <b style="font-family:Helvetica; font-size:18px">Developing Skills (D):</b>-->
+        <!--                            <li>-->
+        <!--                                <i class="bi bi-check-circle-fill fs-6"></i>-->
+        <!--                                <span style="font-family:Helvetica; font-size:18px">-->
+        <!--                        Workshops & Training: Providing a platform to enhance business and leadership skills in areas such as marketing, finance, leadership, and technology.-->
+        <!--                    </span>-->
+        <!--                            </li>-->
+        <!--                            <li>-->
+        <!--                                <i class="bi bi-check-circle-fill fs-6"></i>-->
+        <!--                                <span style="font-family:Helvetica; font-size:18px">-->
+        <!--                        Peer-to-Peer Learning: Promoting mutual learning through networking and collaboration.-->
+        <!--                    </span>-->
+        <!--                            </li>-->
+        <!--                            <b style="font-family:Helvetica; font-size:18px">Knowledge Sharing (K):</b>-->
+        <!--                            <li>-->
+        <!--                                <i class="bi bi-check-circle-fill fs-6"></i>-->
+        <!--                                <span style="font-family:Helvetica; font-size:18px">-->
+        <!--                        Expert Talks & Panel Discussions: Facilitating a space for exchanging insights, experiences, and expertise.-->
+        <!--                    </span>-->
+        <!--                            </li>-->
+        <!--                            <li>-->
+        <!--                                <i class="bi bi-check-circle-fill fs-6"></i>-->
+        <!--                                <span style="font-family:Helvetica; font-size:18px">-->
+        <!--                        Mentorship Programs: Connecting seasoned leaders with those eager to grow their knowledge and leadership skills.-->
+        <!--                    </span>-->
+        <!--                            </li>-->
+        <!--                            <b style="font-family:Helvetica; font-size:18px">Value Creation (V):</b>-->
+        <!--                            <li>-->
+        <!--                                <i class="bi bi-check-circle-fill fs-6"></i>-->
+        <!--                                <span style="font-family:Helvetica; font-size:18px">-->
+        <!--                        Collaborations & Partnerships: Encouraging entrepreneurs to create and exchange value through joint ventures, partnerships, and business referrals.-->
+        <!--                    </span>-->
+        <!--                            </li>-->
+        <!--                            <li>-->
+        <!--                                <i class="bi bi-check-circle-fill fs-6"></i>-->
+        <!--                                <span style="font-family:Helvetica; font-size:18px">-->
+        <!--                        Business Opportunities: Building a network that supports collaboration and mutual growth.-->
+        <!--                    </span>-->
+        <!--                            </li>-->
+        <!--                        </ul>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+
+
+        <div class="col-lg-8" style="background-image: url('{% static '/static_home/img/about-2.jpg' %}');
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 140px 0px;
+border-radius: 50px">
+            <div class="content ps-0 ps-lg-5" style="background-color: rgba(300, 300, 300, 0.25); color: #fff">
+                <ul style="font-family: Helvetica, Arial, sans-serif; font-size: 18px;">
+                    <b>Developing Skills (D):</b>
+                    <li>
+                        <i class="bi bi-check-circle-fill fs-6" style="color : red"></i>
+                        <span>Workshops & Training: Providing a platform to enhance business and leadership skills in areas such as marketing, finance, leadership, and technology.</span>
+                    </li>
+                    <li>
+                        <i class="bi bi-check-circle-fill fs-6" style="color : red"></i>
+                        <span>Peer-to-Peer Learning: Promoting mutual learning through networking and collaboration.</span>
+                    </li>
+                    <b>Knowledge Sharing (K):</b>
+                    <li>
+                        <i class="bi bi-check-circle-fill fs-6" style="color : red"></i>
+                        <span>Expert Talks & Panel Discussions: Facilitating a space for exchanging insights, experiences, and expertise.</span>
+                    </li>
+                    <li>
+                        <i class="bi bi-check-circle-fill fs-6" style="color : red"></i>
+                        <span>Mentorship Programs: Connecting seasoned leaders with those eager to grow their knowledge and leadership skills.</span>
+                    </li>
+                    <b>Value Creation (V):</b>
+                    <li>
+                        <i class="bi bi-check-circle-fill fs-6" style="color : red"></i>
+                        <span>Collaborations & Partnerships: Encouraging entrepreneurs to create and exchange value through joint ventures, partnerships, and business referrals.</span>
+                    </li>
+                    <li>
+                        <i class="bi bi-check-circle-fill fs-6" style="color : red"></i>
+                        <span>Business Opportunities: Building a network that supports collaboration and mutual growth.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+<section class="apply-now" id="apply">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 align-self-center">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="item">
+                            <h3>APPLY FOR BACHELOR DEGREE</h3>
+                            <p>You are allowed to use this edu meeting CSS template for your school or university or
+                                business. You can feel free to modify or edit this layout.</p>
+                            <div class="main-button-red">
+                                <div class="scroll-to-section"><a href="#contact">Join Us Now!</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="item">
+                            <h3>APPLY FOR BACHELOR DEGREE</h3>
+                            <p>You are not allowed to redistribute the template ZIP file on any other template website.
+                                Please contact us for more information.</p>
+                            <div class="main-button-yellow">
+                                <div class="scroll-to-section"><a href="#contact">Join Us Now!</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="accordions is-first-expanded">
+                    <article class="accordion">
+                        <div class="accordion-head">
+                            <span>About Edu Meeting HTML Template</span>
+                            <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                        </div>
+                        <div class="accordion-body">
+                            <div class="content">
+                                <p>If you want to get the latest collection of HTML CSS templates for your websites, you
+                                    may visit <a rel="nofollow" href="https://www.toocss.com/" target="_blank">Too CSS
+                                        website</a>. If you need a working contact form script, please visit <a
+                                            href="https://templatemo.com/contact" target="_parent">our contact page</a>
+                                    for more info.</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="accordion">
+                        <div class="accordion-head">
+                            <span>HTML CSS Bootstrap Layout</span>
+                            <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                        </div>
+                        <div class="accordion-body">
+                            <div class="content">
+                                <p>Etiam posuere metus orci, vel consectetur elit imperdiet eu. Cras ipsum magna,
+                                    maximus at semper sit amet, eleifend eget neque. Nunc facilisis quam purus, sed
+                                    vulputate augue interdum vitae. Aliquam a elit massa.<br><br>
+                                    Nulla malesuada elit lacus, ac ultricies massa varius sed. Etiam eu metus eget nibh
+                                    consequat aliquet. Proin fringilla, quam at euismod porttitor, odio odio tempus
+                                    ligula, ut feugiat ex erat nec mauris. Donec viverra velit eget lectus sollicitudin
+                                    tincidunt.</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="accordion">
+                        <div class="accordion-head">
+                            <span>Please tell your friends</span>
+                            <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                        </div>
+                        <div class="accordion-body">
+                            <div class="content">
+                                <p>Ut vehicula mauris est, sed sodales justo rhoncus eu. Morbi porttitor quam velit, at
+                                    ullamcorper justo suscipit sit amet. Quisque at suscipit mi, non efficitur
+                                    velit.<br><br>
+                                    Cras et tortor semper, placerat eros sit amet, porta est. Mauris porttitor sapien et
+                                    quam volutpat luctus. Nullam sodales ipsum ac neque ultricies varius.</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="accordion last-accordion">
+                        <div class="accordion-head">
+                            <span>Share this to your colleagues</span>
+                            <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                        </div>
+                        <div class="accordion-body">
+                            <div class="content">
+                                <p>Maecenas suscipit enim libero, vel lobortis justo condimentum id. Interdum et
+                                    malesuada fames ac ante ipsum primis in faucibus.<br><br>
+                                    Sed eleifend metus sit amet magna tristique, posuere laoreet arcu semper. Nulla
+                                    pellentesque ut tortor sit amet maximus. In eu libero ullamcorper, semper nisi quis,
+                                    convallis nisi.</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="our-courses" id="courses">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <h2>Our Partners</h2>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="owl-courses-item owl-carousel">
+                    {% for company in companies %}
+                    <div class="item">
+                        <div class="swiper-slide">
+                            <a href="{% url 'company_landing' company.id %}">
+                                <img src="{{ company.logo.url }}" class="img-fluid" alt="{{ company.name }} Logo">
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="our-facts">
+    <div class="container">
+        <h2 style="align-items:center;">Our vision</h2>
+<!--        <div class="row align-items-center">-->
+<!--            <div class="col-lg-12">-->
+                <div class="section-title" data-aos="fade-up" style="font-family:Helvetica; font-size:20px; color: #fff;">
+                    <p style="color: #fff">"Our vision is to become the leading global platform for entrepreneurs and professionals, where ideas are nurtured, knowledge is shared, and businesses thrive through collaboration. We aim to create an inclusive ecosystem that empowers individuals and organizations to achieve sustainable growth, unlock new opportunities, and form long-lasting partnerships."</p>
+                </div>
+<!--            </div>-->
+<!--            <div class="col-lg-6">-->
+<!--                <div class="video text-lg-right">-->
+<!--                    <a href="https://www.youtube.com/watch?v=HndV87XpkWg" target="_blank">-->
+<!--                        <img src="{% static 'static_new/assets/images/play-icon.png' %}" alt="Video Play Button">-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+</section>
+
+
+<section class="contact-us" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 align-self-center">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form id="contact" action="" method="post">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h2>Let's get in touch</h2>
+                                </div>
+                                <div class="col-lg-4">
+                                    <fieldset>
+                                        <input name="name" type="text" id="name" placeholder="YOURNAME...*" required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-4">
+                                    <fieldset>
+                                        <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*"
+                                               placeholder="YOUR EMAIL..." required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-4">
+                                    <fieldset>
+                                        <input name="subject" type="text" id="subject" placeholder="SUBJECT...*"
+                                               required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-12">
+                                    <fieldset>
+                                        <textarea name="message" type="text" class="form-control" id="message"
+                                                  placeholder="YOUR MESSAGE..." required=""></textarea>
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-12">
+                                    <fieldset>
+                                        <button type="submit" id="form-submit" class="button">SEND MESSAGE NOW</button>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="right-info">
+                    <ul>
+                        <li>
+                            <h6>Phone Number</h6>
+                            <span>010-020-0340</span>
+                        </li>
+                        <li>
+                            <h6>Email Address</h6>
+                            <span>info@meeting.edu</span>
+                        </li>
+                        <li>
+                            <h6>Street Address</h6>
+                            <span>Rio de Janeiro - RJ, 22795-008, Brazil</span>
+                        </li>
+                        <li>
+                            <h6>Website URL</h6>
+                            <span>www.meeting.edu</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright © 2022 Edu Meeting Co., Ltd. All Rights Reserved.
+            <br>
+            Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a>
+            <br>
+            Distibuted By: <a href="https://themewagon.com" target="_blank"
+                              title="Build Better UI, Faster">ThemeWagon</a>
+        </p>
+    </div>
+</section>
+
+<!-- Scripts -->
+<!-- Bootstrap core JavaScript -->
+<script src="{% static 'static_new/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'static_new/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{% static 'static_new/assets/js/isotope.min.js' %}"></script>
+<script src="{% static 'static_new/assets/js/owl-carousel.js' %}"></script>
+<script src="{% static 'static_new/assets/js/lightbox.js' %}"></script>
+<script src="{% static 'static_new/assets/js/tabs.js' %}"></script>
+<script src="{% static 'static_new/assets/js/video.js' %}"></script>
+<script src="{% static 'static_new/assets/js/slick-slider.js' %}"></script>
+<script src="{% static 'static_new/assets/js/custom.js' %}"></script>
+<script>
+    //according to loftblog tut
+    $('.nav li:first').addClass('active');
+
+    var showSection = function showSection(section, isAnimate) {
+      var
+      direction = section.replace(/#/, ''),
+      reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+      reqSectionPos = reqSection.offset().top - 0;
+
+      if (isAnimate) {
+        $('body, html').animate({
+          scrollTop: reqSectionPos },
+        800);
+      } else {
+        $('body, html').scrollTop(reqSectionPos);
+      }
+
+    };
+
+    var checkSection = function checkSection() {
+      $('.section').each(function () {
+        var
+        $this = $(this),
+        topEdge = $this.offset().top - 80,
+        bottomEdge = topEdge + $this.height(),
+        wScroll = $(window).scrollTop();
+        if (topEdge < wScroll && bottomEdge > wScroll) {
+          var
+          currentId = $this.data('section'),
+          reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+          reqLink.closest('li').addClass('active').
+          siblings().removeClass('active');
+        }
+      });
+    };
+
+    $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+      e.preventDefault();
+      showSection($(this).attr('href'), true);
+    });
+
+    $(window).scroll(function () {
+      checkSection();
+    });
+</script>
+</body>
+
+</html>
