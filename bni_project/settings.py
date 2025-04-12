@@ -21,7 +21,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 DEFAULT_FROM_EMAIL = "my app"
-EMAIL_HOST_USER = 'vishnuu3043@gmail.com'
+EMAIL_HOST_USER = 'vishnuu3042@gmail.com'
 EMAIL_HOST_PASSWORD = 'zdzmwjoneuaoxuio'
 # EMAIL_HOST_USER = os.environ.get("AA_EMAIL_HOST_USER")
 # EMAIL_HOST_PASSWORD = os.environ.get("AA_EMAIL_HOST_PASSWORD")
@@ -29,7 +29,7 @@ DEBUG = True
 
 
 
-ALLOWED_HOSTS = ['103.235.105.59', 'localhost', '127.0.0.1','skyrichdemo.in']
+ALLOWED_HOSTS = ['103.235.105.59', 'localhost', '127.0.0.1','skyrichdemo.in','103.235.105.132']
 #ALLOWED_HOSTS = ['*']
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -144,3 +144,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://skyrichdemo.in",
+    "https://skyrichdemo.in"
+]

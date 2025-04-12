@@ -57,9 +57,13 @@
 <div class="container-fluid bg-dark py-2 d-none d-md-flex">
     <div class="container">
         <div class="d-flex justify-content-between topbar">
-            <div class="top-info">
-                <small class="me-3 text-white"><a href="#"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>Chennai</small>
-                <small class="me-3 text-white"><a href="#"><i class="fas fa-envelope me-2 text-secondary"></i></a>pngmeetup@gmail.com</small>
+            <div class="top-info">               <small class="me-3 text-white">
+  <a class="me-3 text-white">
+    <span style="font-size: 1.4em;">D</span>eveloping Skills |
+    <span style="font-size: 1.4em;">K</span>nowledge Sharing |
+    <span style="font-size: 1.4em;">V</span>alue Creation
+  </a>
+</small>
             </div>
             <!--            <div id="note" class="text-secondary d-none d-xl-flex"><small>Note : We help you to Grow your-->
             <!--                Business</small></div>-->
@@ -72,6 +76,12 @@
                         class="fab fa-instagram text-primary"></i></a>
                 <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle me-0"><i
                         class="fab fa-linkedin-in text-primary"></i></a>
+                 <a href="https://wa.me/7200078866"
+   target="_blank"
+   class="btn-light nav-fill btn btn-square rounded-circle me-0"
+   style="margin-left: 10px;">
+   <i class="fab fa-whatsapp text-primary"></i>
+</a>
             </div>
         </div>
     </div>
@@ -124,17 +134,19 @@
 </script>
             <div class="d-none d-xl-flex flex-shirink-0">
                 <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
-                    <a href="" class="position-relative animated tada infinite">
-                        <i class="fa fa-phone-alt text-black fa-2x"></i>
-                        <div class="position-absolute" style="top: -7px; left: 20px;">
-                            <span><i class="fa fa-comment-dots text-secondary"></i></span>
-                        </div>
-                    </a>
+<!--                    <a href="" class="position-relative animated tada infinite">-->
+<!--                        <i class="fa fa-phone-alt text-black fa-2x"></i>-->
+<!--&lt;!&ndash;                        <div class="position-absolute" style="top: -7px; left: 20px;">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <span><i class="fa fa-comment-dots text-secondary"></i></span>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                    </a>-->
                 </div>
-                <div class="d-flex flex-column pe-4">
-                    <span class="text-white-50">Have any questions?</span>
-                    <span class="text-black ">Call: +91 9444246652</span>
-                </div>
+               <a href="{% url 'registration-form' %}" class="me-2">
+                            <button type="button"
+                                    class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">
+                                Join Us
+                            </button>
+                        </a>
 
             </div>
         </nav>
@@ -221,15 +233,18 @@
             </div>
 
             <!-- Second Column (Text Content) -->
-            <div class="col-lg-4 col-md-4 col-sm-12 wow fadeIn" data-wow-delay=".5s">
-                <h5 class="text-primary">About Us </h5>
-                <p><b>Professional Network Group (PNG)</b> was founded by <b>Er. Raja B.E., </b>Managing Partner of RPR
-                    Group of Companies in October 2017 under the name D-Connect, a referral-based network designed
-                    to connect entrepreneurs and businesses. From October 2017 to August 2024, D-Connect facilitated
-                    business referrals worth ₹5 Crores across multiple industries, despite not having a formalized
-                    member base.</p>
-                <a href="{% url 'about' %}" class="btn btn-secondary rounded-pill px-5 py-3 text-white">More Details</a>
-            </div>
+           <div class="col-lg-4 col-md-4 col-sm-12 wow fadeIn" data-wow-delay=".5s">
+    <h5 class="text-primary">About Us</h5>
+    <p style="text-align: justify;">
+        <b>Professional Network Group (PNG)</b> was founded by <b>Er. Raja B.E., </b>Managing Partner of RPR
+        Group of Companies in October 2017 under the name D-Connect, a referral-based network designed
+        to connect entrepreneurs and businesses. From October 2017 to August 2024, D-Connect facilitated
+        business referrals worth ₹5 Crores across multiple industries, despite not having a formalized
+        member base.
+    </p>
+    <a href="{% url 'about' %}" class="btn btn-secondary rounded-pill px-5 py-3 text-white">More Details</a>
+</div>
+
 
             <!-- Third Column (Events Section) -->
             <div class="col-lg-4 col-md-4 col-sm-12 wow fadeIn" data-wow-delay=".7s">
@@ -292,7 +307,7 @@
 <div class="container">
     <div class="text-center mx-auto pb-5 col-sm-12 wow fadeIn " data-wow-delay=".3s" >
         <h5 class="text-primary">Our Mission</h5>
-        <p class="extra_pad mb-2" style="padding-left:20px"><b>PNG</b> is a dynamic platform committed to connecting entrepreneurs and professionals through
+        <p class="extra_pad mb-2" style="padding-left:20px;text-align: justify;"><b>PNG</b> is a dynamic platform committed to connecting entrepreneurs and professionals through
             regular meetups centered around three core pillars: <b>Developing Skills, Knowledge Sharing</b>, and <b>Value
                 Creation (DKV)</b>. Our mission is to empower business owners and professionals to achieve sustainable
             growth, create new opportunities, and cultivate a culture of mutual success.</p>
@@ -318,58 +333,56 @@
         <div class="row mx-auto pb-5 fadeIn gap extra_pad" data-wow-delay=".6s">
             <!-- Developing Skills (D) -->
             <div class="col-md-4 pillar" data-wow-delay=".6s">
-                <h5><b>Developing Skills (D):</b></h5>
-                <ul>
-                    <li><b>Workshops & Training:</b> Providing a platform to enhance business and leadership skills in
-                        areas
-                        such as marketing, finance, leadership, and technology.
-                    </li>
-                    <li><b>Peer-to-Peer Learning:</b> Promoting mutual learning through networking and collaboration.
-                    </li>
+                <h5>
+                    <b>
+                        <span style="font-size: 1.5em;">D</span>eveloping Skills:
+                    </b>
+                </h5>
+                <ul style="text-align: justify;">
+                    <li><b>Workshops & Training:</b> Providing a platform to enhance business and leadership skills in areas such as marketing, finance, leadership, and technology.</li>
+                    <li><b>Peer-to-Peer Learning:</b> Promoting mutual learning through networking and collaboration.</li>
                 </ul>
             </div>
 
             <!-- Knowledge Sharing (K) -->
             <div class="col-md-4 pillar" data-wow-delay=".6s">
-                <h5><b>Knowledge Sharing (K):</b></h5>
-                <ul>
-                    <li><b>Expert Talks & Panel Discussions:</b> Facilitating a space for exchanging insights,
-                        experiences,
-                        and expertise.
-                    </li>
-                    <li><b>Mentorship Programs:</b> Connecting seasoned leaders with those eager to grow their knowledge
-                        and
-                        leadership skills.
-                    </li>
+                <h5>
+                    <b>
+                        <span style="font-size: 1.5em;">K</span>nowledge Sharing:
+                    </b>
+                </h5>
+                <ul style="text-align: justify;">
+                    <li><b>Expert Talks & Panel Discussions:</b> Facilitating a space for exchanging insights, experiences, and expertise.</li>
+                    <li><b>Mentorship Programs:</b> Connecting seasoned leaders with those eager to grow their knowledge and leadership skills.</li>
                 </ul>
             </div>
 
             <!-- Value Creation (V) -->
             <div class="col-md-4 pillar" data-wow-delay=".6s">
-                <h5><b>Value Creation (V):</b></h5>
-                <ul>
-                    <li><b>Collaborations & Partnerships:</b> Encouraging entrepreneurs to create and exchange value
-                        through
-                        joint ventures, partnerships, and business referrals.
-                    </li>
-                    <li><b>Business Opportunities:</b> Building a network that supports collaboration and mutual growth.
-                    </li>
+                <h5>
+                    <b>
+                        <span style="font-size: 1.5em;">V</span>alue Creation:
+                    </b>
+                </h5>
+                <ul style="text-align: justify;">
+                    <li><b>Collaborations & Partnerships:</b> Encouraging entrepreneurs to create and exchange value through joint ventures, partnerships, and business referrals.</li>
+                    <li><b>Business Opportunities:</b> Building a network that supports collaboration and mutual growth.</li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
-<!-- End Core Pillars -->
+
 
 <!-- Vision Section -->
-<div class="container-fluid py-5 my-5">
+<div class="container-fluid py-5 my-5" style="margin-top: -3rem !important;">
     <div class="container pt-5">
         <div class="row g-5">
 
             <!-- Second Column (Text Content) -->
             <div class="col-lg-8 col-md-4 col-sm-12 wow fadeIn" data-wow-delay=".5s">
-                <h5 class="text-primary"> Our Vision </h5>
-                <p>Our vision is to become the leading global platform for entrepreneurs and professionals, where ideas
+                <h5 class="text-primary;"> Our Vision </h5>
+                <p style="text-align: justify;">Our vision is to become the leading global platform for entrepreneurs and professionals, where ideas
                     are nurtured, knowledge is shared, and businesses thrive through collaboration. We aim to create an
                     inclusive ecosystem that empowers individuals and organizations to achieve sustainable growth,
                     unlock new opportunities, and form long-lasting partnerships. Through skill development, innovation,
@@ -423,7 +436,7 @@
 
 
 <!-- Services Start -->
-<div id="service" class="container-fluid services py-5 mb-5">
+<div id="service" class="container-fluid services py-5 mb-5" style="margin-top: -3rem;">
     <div class="container">
         <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
             <h5 class="text-primary">What We Offer</h5>
@@ -490,6 +503,10 @@
 
 <!-- Testimonial Start -->
 <style>
+    .justify-text {
+    text-align: justify;
+}
+
     .testimonial-item {
     display: flex;
     flex-direction: column;
@@ -525,7 +542,7 @@
     }
 }
 </style>
-<div class="container-fluid testimonial py-5 mb-5">
+<div class="container-fluid testimonial py-5 mb-5" style="margin-top: -3rem;">
     <div class="container">
         <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
             <h5 class="text-primary">Our Partners</h5>
@@ -563,9 +580,9 @@
 
 
 <!-- Contact Start -->
-<section id="contact" class="contact section">
+<section id="contact" class="contact section" style="margin-top: -3rem;">
     <div class="container section-title" data-aos="fade-up">
-        <h2>Contact Us</h2>
+        <h2>Enquiry</h2>
     </div><!-- End Section Title -->
     <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gx-lg-0 gy-4">
@@ -592,13 +609,14 @@
                             <p>pngmeetup@gmail.com</p>
                         </div>
                     </div><!-- End Info Item -->
-                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
-                        <i class="bi bi-clock flex-shrink-0"></i>
-                        <div>
-                            <h3>Open Hours:</h3>
-                            <p>Mon-Sat: 11AM - 23PM</p>
-                        </div>
-                    </div><!-- End Info Item -->
+                   <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+    <i class="bi bi-whatsapp "></i>
+    <div>
+        <h3>WhatsApp</h3>
+        <p>+91 7200078866</p>
+    </div>
+</div>
+                    <!-- End Info Item -->
                 </div>
             </div>
             <div class="col-lg-8">
@@ -637,16 +655,19 @@
 <!-- Contact End -->
 
 <!-- Footer Start -->
-<div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
+<div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s" style="padding: 5px 0; line-height: 1;">
+
+
     <div class="container pt-5 pb-4">
         <div class="row g-5">
             <div class="col-lg-4 col-md-6">
                 <a href="{% url 'new_index' %}">
                     <img src="{% static 'png_static\img\png_favicon.png' %}" style="height: 60px; width: 70px;">
                 </a>
-                <p class="mt-4 text-light">Today, PNG continues to foster a vibrant environment where
-                    entrepreneurs,
-                    professionals, and business leaders unite to grow, collaborate, and succeed.</p>
+               <p class="mt-4 text-light" style="text-align: justify;">
+    Today, PNG continues to foster a vibrant environment where entrepreneurs, professionals, and business leaders unite to grow, collaborate, and succeed.
+</p>
+
                 <div class="d-flex hightech-link">
                     <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
                             class="fab fa-facebook-f text-primary"></i></a>
@@ -656,10 +677,15 @@
                             class="fab fa-instagram text-primary"></i></a>
                     <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i
                             class="fab fa-linkedin-in text-primary"></i></a>
+
+                    <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-0"
+   style="margin-left: 10px;"> <i class="fab fa-whatsapp text-primary"></i>
+</a>
+
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
-                <h2 class="h3 text-secondary">Short Link</h2>
+                <h2 class="h3 text-secondary">Quick Link</h2>
                 <div class="mt-4 d-flex flex-column short-link justify-content-center">
                     <a href="{% url 'about' %}" class="mb-2 text-white"><i
                             class="fas fa-angle-right text-secondary me-2"></i>About

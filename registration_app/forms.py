@@ -8,7 +8,7 @@ from django.contrib.auth.forms import AuthenticationForm
 class RegistrationForm(forms.ModelForm):
     class Meta:
         model = Company
-        fields = ['name', 'email', 'logo', 'banner','banner_content', 'description','services', 'password','website_url','youtube_url', 'instagram_url', 'facebook_url','linkedin_url','title']
+        fields = ['name', 'email', 'logo', 'banner','banner_content', 'description','services', 'password','whatsapp_number','website_url','youtube_url', 'instagram_url', 'facebook_url','twitter_url','linkedin_url','title']
 
 # Form for login, where email is used as the username
 class LoginForm(AuthenticationForm):
@@ -33,19 +33,7 @@ class CompanyForm(forms.ModelForm):
         fields = '__all__'  # Include all fields, including password
         exclude = ['bullet_points']
 
-    # def __init__(self, *args, **kwargs):
-    #     super().__init__(*args, **kwargs)
-    #     # Make password field a TextInput to display hashed password
-    #     self.fields['password'].widget = forms.TextInput(attrs={'readonly': 'readonly'})
-    #
-    #     # Add a custom Textarea widget for the bullet_points field
-    #     self.fields['bullet_points'].widget = forms.Textarea(
-    #         attrs={
-    #             'id': 'bullet-textarea',
-    #             'rows': 5,
-    #             'placeholder': '* Type your first point\n* Press Enter for the next point',
-    #         }
-    #     )
+
 
 
 # Recently Added Lines
@@ -58,4 +46,4 @@ class NewsForm(forms.ModelForm):
 class EventForm(forms.ModelForm):
     class Meta:
         model = Event
-        fields = ['event_img', 'name', 'location', 'description']
+        fields = ['event_img', 'name', 'location', 'date','description']

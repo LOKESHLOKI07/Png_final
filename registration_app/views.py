@@ -109,8 +109,8 @@ def partners(request):
     # Query only approved companies
     companies = Company.objects.filter(status='approved')
 
-    for comp in companies:
-        print(f"Company Name: {comp.name}, Status: {comp.status}")
+    # for comp in companies:
+    #     print(f"Company Name: {comp.name}, Status: {comp.status}")
 
     return render(request, 'partners.html', {'companies': companies})
 
@@ -119,8 +119,8 @@ def partners_copy(request):
     # Query only approved companies
     companies = Company.objects.filter(status='approved')
 
-    for comp in companies:
-        print(f"Company Name: {comp.name}, Status: {comp.status}")
+    # for comp in companies:
+    #     print(f"Company Name: {comp.name}, Status: {comp.status}")
 
     return render(request, 'partners_copy.html', {'companies': companies})
 
@@ -373,22 +373,52 @@ from .forms import CompanyForm
 from .models import Company
 
 
+# @login_required
+# @user_passes_test(is_superuser)
+# def company_update(request, pk):
+#     company = get_object_or_404(Company, pk=pk)
+#
+#     if request.method == 'POST':
+#         form = CompanyForm(request.POST, request.FILES, instance=company)
+#
+#         if form.is_valid():
+#             form.save()
+#             messages.success(request, "Company updated successfully!")
+#             return redirect('company_list')  # Redirect after successful update
+#         else:
+#             messages.error(request, "There was an error with the form. Please check your input.")
+#
+#     else:
+#         form = CompanyForm(instance=company)
+#
+#     return render(request, 'company_form.html', {'form': form, 'company': company})
 @login_required
 @user_passes_test(is_superuser)
 def company_update(request, pk):
     company = get_object_or_404(Company, pk=pk)
 
     if request.method == 'POST':
+        print("🔧 POST request received")
         form = CompanyForm(request.POST, request.FILES, instance=company)
 
         if form.is_valid():
-            form.save()
-            messages.success(request, "Company updated successfully!")
-            return redirect('company_list')  # Redirect after successful update
-        else:
-            messages.error(request, "There was an error with the form. Please check your input.")
+            print("✅ Form is valid")
+            updated_company = form.save(commit=False)
 
+            # Debug print each field
+            for field in form.cleaned_data:
+                print(f"{field}: {form.cleaned_data[field]}")
+
+            updated_company.save()
+            messages.success(request, "Company updated successfully!")
+            return redirect('company_list')
+
+        else:
+            print("❌ Form is invalid")
+            print(form.errors)  # show validation errors in console
+            messages.error(request, "There was an error with the form. Please check your input.")
     else:
+        print("ℹ️ GET request - loading form")
         form = CompanyForm(instance=company)
 
     return render(request, 'company_form.html', {'form': form, 'company': company})
@@ -663,25 +693,35 @@ def news_new(request):
     news_articles = NewsUpload.objects.order_by('-publication_date')
     return render(request, 'events_news.html', {'news_articles': news_articles})
 
-# def partners_new(request):
-#     companies = Company.objects.filter(status='approved')
-#     return render(request, 'events_news.html', {'companies': companies})
 
 from django.db.models import Q
 import re
 
+
 def partners_new(request):
     query = request.GET.get('search', '').strip()
     cleaned_query = re.sub(r'[^\w\s]', '', query)
+
+    # Base query
     if query:
         companies = Company.objects.filter(
             Q(status='approved') &
-            (Q(name__icontains=cleaned_query) | Q(services__icontains=cleaned_query)))
+            (Q(name__icontains=cleaned_query) | Q(services__icontains=cleaned_query))
+        )
     else:
         companies = Company.objects.filter(status='approved')
 
-    # # Output companies for debugging
+    # Order: Premium first, and among them by when they became premium (oldest first)
+    companies = companies.order_by('-user_type')
+
+
+    # Fix encoding issues
     for company in companies:
-        print(f"Company Name: {company.name}, Services: {company.services}")
+        try:
+            company.name.encode('utf-8').decode('utf-8')
+            company.services.encode('utf-8').decode('utf-8')
+        except UnicodeDecodeError:
+            company.name = company.name.encode().decode('latin1', errors='replace')
+            company.services = company.services.encode().decode('latin1', errors='replace')
 
     return render(request, 'events_news.html', {'companies': companies, 'query': query})

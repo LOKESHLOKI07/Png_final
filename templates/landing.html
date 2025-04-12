@@ -28,333 +28,621 @@
     <link href="{% static 'landing_static/css/style.css' %}" rel="stylesheet">
 
 <link href="{% static 'png_static/img/png_favicon.png' %}" rel="icon">
+    <style>
+        .navbar-nav a.nav-link {
+             color: black !important;
+            font-weight: 350;
+            font-size: 19px;
+            margin: 0 8px;
+<!--            margin: 0 15px;-->
+            transition: color 0.3s ease-in-out;
+        }
+        .navbar-nav a.nav-link:hover {
+         color: #CF2030 !important;
+
+        }
+
+    </style>
 </head>
 
-<body>
 
 <!-- Spinner Start -->
-<div id="spinner"
-     class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+<body>
+  <!-- Spinner -->
+  <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
     <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-        <span class="sr-only">Loading...</span>
+      <span class="sr-only">Loading...</span>
     </div>
-</div>
-<!-- Spinner End -->
+  </div>
+
+  <!-- CSS in head would be better, but keeping it here for your structure -->
+<style>
+ /* ===== Base Navbar Styles ===== */
+.top-navbar {
+  background-color: #343a40;
+  padding: 5px 0;
+  font-size: 14px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1050;
+}
+
+.main-navbar {
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  position: fixed;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  z-index: 1040;
+  transition: all 0.3s ease;
+}
+.main-navbar,
+.sub-navbar {
+  transition: top 0.3s ease, opacity 0.3s ease;
+}
+
+.hide-main-navbar {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
 
 
-<!-- Navbar & Hero Start -->
-<div class="container-fluid header position-relative overflow-hidden p-0">
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light px-4 px-lg-5 py-3 py-lg-0">
-    <a href="{% url 'new_index' %}" class="navbar-brand p-0">
-        <img src="{% static '/static_home/img/png_new.png' %}"
-             alt="Image"
+.sub-navbar {
+  background-color: #f1f1f1;
+  padding: 10px 0;
+  position: fixed;
+  top: 135px;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* ===== Content Spacing ===== */
+.content-spacer {
+  padding-top: 250px;
+}
+
+/* ===== Banner Styles ===== */
+.banner-container {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.responsive-image {
+  width: 80%;
+  max-width: 1200px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ===== Service Boxes ===== */
+.service-box {
+  padding: 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  text-align: center;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  background-color: #f8f9fa;
+}
+
+/* ===== Mobile Responsiveness ===== */
+@media (max-width: 1199px) {
+  .responsive-image {
+    width: 90%;
+    height: 400px;
+  }
+}
+
+@media (max-width: 991px) {
+  /* Hide secondary navbars */
+  .top-navbar, .sub-navbar {
+    display: none !important;
+  }
+
+  /* Compact main navbar */
+  .main-navbar {
+    top: 0;
+    padding: 8px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Logo adjustments */
+  .main-navbar .navbar-brand img {
+    height: 50px !important;
+    transition: height 0.3s ease;
+  }
+
+  /* Toggle button styling */
+  .navbar-toggler {
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    border: none;
+  }
+
+  /* Content spacing */
+  .content-spacer {
+    padding-top: 70px;
+  }
+
+  /* Nav items */
+  .navbar-nav .nav-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  /* Join Us button */
+  .custom-btn {
+    padding: 0.5rem 1.5rem !important;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  /* Banner adjustments */
+  .responsive-image {
+    height: 350px;
+    width: 95%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .content-spacer {
+    padding-top: 65px;
+  }
+
+  .responsive-image {
+    height: 300px;
+    margin-top: 30px;
+  }
+
+  .service-box {
+    padding: 0.75rem;
+    min-height: 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Ultra-compact navbar */
+  .main-navbar {
+    padding: 5px 0;
+  }
+
+  .main-navbar .navbar-brand img {
+    height: 40px !important;
+  }
+
+  /* Adjusted spacing */
+  .content-spacer {
+    padding-top: 60px;
+  }
+
+  /* Smaller banner with full-width scaling and adjusted margin */
+  .responsive-image {
+    height: 180px; /* Reduced height for mobile */
+    width: 100%; /* Full-width scaling */
+    border-radius: 0;
+    margin-top: 15px; /* Added margin-top to position below navbar */
+    object-fit: contain; /* Keep proportions while scaling */
+  }
+
+  /* More compact nav items */
+  .navbar-collapse {
+    padding: 0.5rem 0;
+  }
+
+  /* Button adjustments */
+  .custom-btn {
+    padding: 0.4rem 1.2rem !important;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .main-navbar .navbar-brand img {
+    height: 35px !important;
+  }
+
+  .content-spacer {
+    padding-top: 55px;
+  }
+
+  /* Optimized image for very small devices */
+  .responsive-image {
+    height: 150px; /* Further reduced height */
+    margin-top: 20px; /* Adjusted spacing */
+  }
+}
+
+/* Tablet optimization (991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .responsive-image {
+    height: 320px; /* Optimized height for tablets */
+    width: 95%;
+  }
+}
+
+</style>
+
+  <!-- Top Navbar -->
+<nav class="navbar navbar-expand-lg top-navbar" aria-label="Top navigation"
+     style="background-color: black; padding: 5px 0;">
+    <div class="container">
+      <div>
+        <small class="me-3 text-white"><a class="me-3 text-white">
+    <span style="font-size: 1.4em;">D</span>eveloping Skills |
+    <span style="font-size: 1.4em;">K</span>nowledge Sharing |
+    <span style="font-size: 1.4em;">V</span>alue Creation
+  </a>
+        </small>
+      </div>
+      <div class="d-flex align-items-center">
+        <a class="btn-square social-btn mx-1" href="#" aria-label="Facebook"
+           style="display: inline-flex; align-items: center; justify-content: center;
+                  width: 32px; height: 32px; background-color: white; border-radius: 50%;">
+            <i class="fab fa-facebook-f" style="color: #cf2030;"></i>
+        </a>
+        <a class="btn-square social-btn mx-1" href="#" aria-label="Twitter"
+           style="display: inline-flex; align-items: center; justify-content: center;
+                  width: 32px; height: 32px; background-color: white; border-radius: 50%;">
+            <i class="fab fa-twitter" style="color: #cf2030;"></i>
+        </a>
+        <a class="btn-square social-btn mx-1" href="#" aria-label="Instagram"
+           style="display: inline-flex; align-items: center; justify-content: center;
+                  width: 32px; height: 32px; background-color: white; border-radius: 50%;">
+            <i class="fab fa-instagram" style="color: #cf2030;"></i>
+        </a>
+        <a class="btn-square social-btn mx-1" href="#" aria-label="LinkedIn"
+           style="display: inline-flex; align-items: center; justify-content: center;
+                  width: 32px; height: 32px; background-color: white; border-radius: 50%;">
+            <i class="fab fa-linkedin-in" style="color: #cf2030;"></i>
+        </a>
+        <a class="btn-square social-btn mx-1" href="#" aria-label="Website"
+           style="display: inline-flex; align-items: center; justify-content: center;
+                  width: 32px; height: 32px; background-color: white; border-radius: 50%;">
+            <i class="fas fa-globe" style="color: #cf2030;"></i>
+        </a>
+        <a class="btn-square social-btn mx-1" href="#" aria-label="WhatsApp"
+           style="display: inline-flex; align-items: center; justify-content: center;
+                  width: 32px; height: 32px; background-color: white; border-radius: 50%;">
+            <i class="fab fa-whatsapp" style="color: #cf2030;"></i>
+        </a>
+        <a class="btn-square social-btn mx-1" href="#" aria-label="Email"
+           style="display: inline-flex; align-items: center; justify-content: center;
+                  width: 32px; height: 32px; background-color: white; border-radius: 50%;">
+            <i class="fas fa-envelope" style="color: #cf2030;"></i>
+        </a>
+      </div>
+    </div>
+</nav>
+
+
+  <!-- Main Navbar -->
+  <nav class="navbar navbar-expand-lg main-navbar" aria-label="Main navigation">
+    <div class="container">
+      <a href="{% url 'new_index' %}" class="navbar-brand p-0">
+        <img src="{% static '/static_home/img/png_new.png' %}" alt="PNG Logo"
              style="height: 80px; object-fit: contain;">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarCollapse" aria-expanded="false"
+              aria-label="Toggle navigation">
         <span class="fa fa-bars"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <style>
-            .custom_padding{
-                padding-left:150px;
-            }
-            @media (max-width: 480px) {
-                .custom_padding{
-                  padding-left:0px;
-                }
-              }
-            @media (max-width: 768px) {
-                .custom_padding {
-                  padding-left:0px;
-                }
-              }
-        </style>
-        <div class="navbar-nav me-auto custom_padding">
-            <a class="nav-link text-primary" href="{% url 'new_index' %}">Home</a>
-            <a class="nav-link text-primary" href="{% url 'about' %}">About</a>
-            <a class="nav-link text-primary" href="{% url 'new_index' %}#service">Service</a>
-            <a class="nav-link text-primary" href="{% url 'partners_new' %}">Partners</a>
-            <a class="nav-link text-primary" href="{% url 'events1' %}">Events</a>
-            <a class="nav-link text-primary" href="{% url 'news_new' %}">News</a>
-            <a class="nav-link text-primary" href="{% url 'new_index' %}#contact">Contact</a>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto mx-xl-auto p-0">
+          <a class="nav-item nav-link" href="{% url 'new_index' %}"
+             style="color: black !important; font-size: 18px; font-weight: 400; transition: color 0.3s ease;">Home</a>
+
+          <a class="nav-item nav-link" href="{% url 'about' %}"
+             style="color: black !important; font-size: 18px; font-weight: 400; transition: color 0.3s ease;">About</a>
+
+          <a class="nav-item nav-link" href="{% url 'new_index' %}#service"
+             style="color: black !important; font-size: 18px; font-weight: 400; transition: color 0.3s ease;">Service</a>
+
+          <a class="nav-item nav-link" href="{% url 'partners_new' %}"
+             style="color: black !important; font-size: 18px; font-weight: 400; transition: color 0.3s ease;">Partners</a>
+
+          <a class="nav-item nav-link" href="{% url 'events1' %}"
+             style="color: black !important; font-size: 18px; font-weight: 400; transition: color 0.3s ease;">Events</a>
+
+          <a class="nav-item nav-link" href="{% url 'news_new' %}"
+             style="color: black !important; font-size: 18px; font-weight: 400; transition: color 0.3s ease;">News</a>
+
+          <a class="nav-item nav-link" href="{% url 'new_index' %}#contact"
+             style="color: black !important; font-size: 18px; font-weight: 400; transition: color 0.3s ease;">Enquiry</a>
         </div>
-        <div class="d-flex align-items-center">
-            <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-            <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-            <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-            <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-            <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fas fa-globe"></i></a>
+
+        <a href="{% url 'registration-form' %}" class="me-2">
+          <button type="button" class="custom-btn px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill">
+            Join Us
+          </button>
+        </a>
+      </div>
+    </div>
+</nav>
+
+<!-- Hover effect with CSS -->
+<style>
+  .navbar-nav .nav-link:hover {
+    color: #cf2030 !important;
+  }
+</style>
+
+
+
+
+  <!-- Sub Navbar -->
+  <nav class="navbar navbar-expand-lg sub-navbar" aria-label="Secondary navigation">
+    <div class="container">
+        <a href="{% url 'new_index' %}" class="navbar-brand p-0">
+            <img src="{{ company.logo.url }}" alt="Company Logo" style="height: 70px; object-fit: contain;">
+        </a>
+        <div class="collapse navbar-collapse" id="subNavbarCollapse">
+            <div class="d-flex align-items-center ms-auto">
+                <!-- New Button Before Facebook -->
+                <a class="btn btn-primary px-3 me-2" href="{{ company.website_url }}"style="background: #cf2030; color: white; border-radius: 8px; font-size: 16px; font-weight: 400;">Partner Site</a>
+
+                <a class="btn-square btn btn-secondary rounded-circle mx-1" href="{{ company.facebook_url }}" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn-square btn btn-secondary rounded-circle mx-1" href="{{ company.website_url }}" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a class="btn-square btn btn-secondary rounded-circle mx-1" href="{{ company.instagram_url }}" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a class="btn-square btn btn-secondary rounded-circle mx-1" href="{{ company.linkedin_url }}" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn-square btn btn-secondary rounded-circle mx-1" href="{{ company.youtube_url }}" aria-label="Youtube"><i class="fas fa-globe"></i></a>
+                <a class="btn-square btn btn-secondary rounded-circle mx-1" href="{{ company.whatsapp_number }}" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a class="btn-square btn btn-secondary rounded-circle mx-1" href="{{ company.email }}"aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </div>
 </nav>
-   <!-- Hero Header Start -->
-<div class="overflow-hidden px-5">
-    <div class="rotate-img">
-        <img src="{% static 'landing_static/img/sty-1.png' %}" class="img-fluid" alt="">
-        <div class="rotate-sty-2"></div>
+
+  <!-- Main Content -->
+  <main class="content-spacer">
+    <!-- Banner Image -->
+    <div class="container-fluid banner-container">
+      <img class="responsive-image img-fluid" src="{{ company.banner.url }}" alt="Company banner image">
     </div>
-    <div class="row gy-5 align-items-center" style="margin-top:10px">
-        <!-- Left Column (Text) -->
-        <div class="col-12 col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
-            <h3 class="text-dark wow fadeInUp" data-wow-delay="0.3s">{{ company.banner_content }}</h3>
+
+    <div class="container-fluid overflow-hidden py-5">
+      <div class="container py-5">
+        <div class="row g-5 justify-content-center">
+          <div class="col-lg-10 text-center">
+            <h1 class="mb-3 text-primary" style="font-size: 2rem;">About Us</h1>
+            <hr class="mx-auto" style="width: 80px; height: 3px; background-color: #007bff; border: none;">
+            {% if company %}
+           <p class="mt-3" style="font-size: 1.125rem; line-height: 1.6; color: #555; text-align: justify;">
+           {{ company.description }}
+           </p>
+
+            {% else %}
+              <p class="text-muted">No company details found. Please contact support.</p>
+            {% endif %}
+          </div>
         </div>
 
-        <!-- Right Column (Image) -->
-        <div class="col-12 col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
-            <!-- Increased size of banner image on larger screens -->
-<style>
-      .responsive-image {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-      }
-      @media (max-width: 480px) {
-        .responsive-image {
-          height: 100px;
-          max-width: 100%;
-        }
-      }
-<!--      @media (max-width: 768px) {-->
-<!--        .responsive-image {-->
-<!--          height: 200px; /* Adjust height on smaller screens if needed */-->
-<!--        }-->
-<!--      }-->
-    </style>
-            <img class="responsive-image img-fluid" src="{{ company.banner.url }}" alt="" >
-        </div>
+        <!-- Services Section -->
+        {% if company.services %}
+        <div class="row mt-4 justify-content-center" id="service-row"></div>
+        {% endif %}
+      </div>
     </div>
-</div>
-<!-- Hero Header End -->
+  </main>
 
-</div>
-<!-- Navbar & Hero End -->
+  <!-- Footer -->
+  <style>
+  .text-secondary {
+    color: #cf2030 !important;
+  }
+.bg-dark {
+  background-color: black !important;
+  /* OR */
+  /* background-color: #000000 !important; */
+}
 
+</style>
 
-<!-- About Start -->
-<div class="container-fluid overflow-hidden py-5">
-    <div class="container py-5">
+  <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s" style="padding: 5px 0; line-height: 1;">
+    <div class="container pt-5 pb-4">
         <div class="row g-5">
-            <div class="col-12 col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="RotateMoveLeft">
-                    <a href="{{ company.website_url }}" class="navbar-brand d-flex align-items-center">
-                        <img src="{{ company.logo.url }}" alt="Logo"
-                             style="width: 100%; max-width: 500px; height: auto; object-fit: contain;">
-                    </a>
+            <div class="col-lg-4 col-md-6">
+                <a href="{% url 'new_index' %}">
+                    <img src="{% static 'png_static\img\png_favicon.png' %}" style="height: 60px; width: 70px;">
+                </a>
+               <p class="mt-4 text-light" style="text-align: justify;">
+    Today, PNG continues to foster a vibrant environment where entrepreneurs, professionals, and business leaders unite to grow, collaborate, and succeed.
+</p>
+                <style>
+                    .text-primary {
+ color: #cf2030 !important;
+}
+                    .btn.btn-light:hover {
+    background: #ffffff !important; /* white background */
+    color: var(--bs-primary) !important; /* change text to primary color */
+    border-color: var(--bs-primary) !important; /* optional: adjust border to match */
+}
+
+                </style>
+
+                <div class="d-flex hightech-link">
+                    <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
+                            class="fab fa-facebook-f text-primary"></i></a>
+                    <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
+                            class="fab fa-twitter text-primary"></i></a>
+                    <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
+                            class="fab fa-instagram text-primary"></i></a>
+                    <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i
+                            class="fab fa-linkedin-in text-primary"></i></a>
+                     <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-0"
+   style="margin-left: 10px;"><i
+                        class="fab fa-whatsapp text-primary"></i></a>
                 </div>
             </div>
-            <div class="col-12 col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                <b style="font-size:25px" class="mb-1 text-primary">About {{ company.title }}</b>
-                {% if company %}
-                    <p class="mb-4">{{ company.description }}</p>
-                {% else %}
-                    <p>No company details found. Please contact support.</p>
-                {% endif %}
-
-                <div class="social-icons mt-4">
-                    <span class="text-dark">Follow Us:</span>
-                    <div class="d-flex justify-content-start mt-3">
-    {% if company.facebook_url %}
-    <a href="{{ company.facebook_url }}" target="_blank" class="btn-square btn btn-primary rounded-circle mx-2">
-        <i class="fab fa-facebook-f"></i>
-    </a>
-    {% endif %}
-    {% if company.instagram_url %}
-    <a href="{{ company.instagram_url }}" target="_blank" class="btn-square btn btn-primary rounded-circle mx-2">
-        <i class="fab fa-instagram"></i>
-    </a>
-    {% endif %}
-    {% if company.linkedin_url %}
-    <a href="{{ company.linkedin_url }}" target="_blank" class="btn-square btn btn-primary rounded-circle mx-2">
-        <i class="fab fa-linkedin-in"></i>
-    </a>
-    {% endif %}
-    {% if company.youtube_url %}
-    <a href="{{ company.youtube_url }}" target="_blank" class="btn-square btn btn-primary rounded-circle mx-2">
-        <i class="fab fa-youtube"></i>
-    </a>
-    {% endif %}
-    {% if company.website_url %}
-    <a href="{{ company.website_url }}" target="_blank" class="btn-square btn btn-primary rounded-circle mx-2">
-        <i class="fas fa-globe"></i>
-    </a>
-    {% endif %}
-</div>
+            <div class="col-lg-4 col-md-6">
+                <h2 class="h3 text-secondary">Quick Link</h2>
+                <div class="mt-4 d-flex flex-column short-link justify-content-center">
+                    <a href="{% url 'about' %}" class="mb-2 text-white"><i
+                            class="fas fa-angle-right text-secondary me-2"></i>About
+                        us</a>
+                    <a href="{% url 'new_index' %}" class="mb-2 text-white"><i
+                            class="fas fa-angle-right text-secondary me-2"></i>Services</a>
+                    <a href="{% url 'partners_new' %}" class="mb-2 text-white"><i
+                            class="fas fa-angle-right text-secondary me-2"></i>Partners</a>
+                    <a href="{% url 'news_new' %}" class="mb-2 text-white"><i
+                            class="fas fa-angle-right text-secondary me-2"></i>News</a>
+                    <a href="{% url 'events1' %}" class="mb-2 text-white"><i
+                            class="fas fa-angle-right text-secondary me-2"></i>Events</a>
+                    <a href="{% url 'new_index' %}" class="mb-2 text-white"><i
+                            class="fas fa-angle-right text-secondary me-2"></i>Enquiry</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <a href="#" class="h3 text-secondary">Contact Us</a>
+                <div class="text-white mt-4 d-flex flex-column contact-link">
+                    <a href="#!" class="pb-3 text-light border-bottom border-primary"><i
+                            class="fas fa-map-marker-alt text-secondary me-2"></i> Chennai</a>
+                    <a href="#!" class="py-3 text-light border-bottom border-primary"><i
+                            class="fas fa-phone-alt text-secondary me-2"></i> +91 9444246652</a>
+                    <a href="#!" class="py-3 text-light border-bottom border-primary"><i
+                            class="fas fa-envelope text-secondary me-2"></i> pngmeetup@gmail.com</a>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<!-- About End -->
-
-<!-- Service Start -->
-<!--{% if company.services %}-->
-<!--<div class="container-fluid service py-5">-->
-<!--    <div class="container py-5">-->
-<!--        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">-->
-<!--            <b style="font-size:25px" class="mb-1 text-primary">Our Service</b>-->
-<!--            <h1 class="display-5 mb-4">What We Can Do For You</h1>-->
-
-<!--            &lt;!&ndash; Container for the three-column layout &ndash;&gt;-->
-<!--            <div id="services-container" class="row" style="font-size:20px"></div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-
-<!--<script>-->
-<!--    // Get the services description text-->
-<!--    const servicesDescriptionText = `{{ company.services }}`;-->
-
-<!--    // Split the description by full stops to separate sentences-->
-<!--    const servicePoints = servicesDescriptionText.split('.').map(point => point.trim()).filter(point => point !== "");-->
-
-<!--    // Get the services container where columns will be added-->
-<!--    const servicesContainer = document.getElementById("services-container");-->
-
-<!--    // Initialize column and add services-->
-<!--    let currentColumn;-->
-
-<!--    servicePoints.forEach((point, index) => {-->
-<!--        // Create a new column every 3 services-->
-<!--        if (index % 3 === 0) {-->
-<!--            currentColumn = document.createElement("div");-->
-<!--            currentColumn.className = "col-lg-4 col-md-6 mb-4"; // Bootstrap column classes-->
-<!--            const ul = document.createElement("ul");-->
-<!--            ul.style.listStyleType = "none";-->
-<!--            ul.style.textAlign = "left";-->
-<!--            currentColumn.appendChild(ul);-->
-<!--            servicesContainer.appendChild(currentColumn);-->
-<!--        }-->
-
-<!--        // Add the service point to the current column-->
-<!--        const listItem = document.createElement("li");-->
-<!--      listItem.innerHTML = `<span style="color: #cf2030; font-weight: bold; ">➣</span> ${point}.`;-->
-
-<!--        currentColumn.querySelector("ul").appendChild(listItem);-->
-<!--    });-->
-<!--</script>-->
-<!--{% endif %}-->
-{% if company.services %}
-<div class="container-fluid service py-5">
-    <div class="container py-5">
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-            <b style="font-size:25px" class="mb-1 text-primary">Our Service</b>
-            <h1 class="display-5 mb-4">What We Can Do For You</h1>
-
-            <!-- Container for the three-column layout -->
-            <div id="services-container" class="row" style="font-size:20px"></div>
+        <hr class="text-light mt-5 mb-4">
+        <div class="row text-center">
+                <span class="text-light"><a href="#" class="text-secondary"><i
+                        class="fas fa-copyright text-secondary me-2"></i>PNG</a>, All right reserved.</span>
         </div>
     </div>
 </div>
 
+
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-primary btn-lg-square back-to-top" aria-label="Back to top"><i class="fa fa-arrow-up"></i></a>
 <script>
-    // Get the services description text
-    const servicesDescriptionText = `{{ company.services }}`;
+  const mainNavbar = document.querySelector('.main-navbar');
+  const subNavbar = document.querySelector('.sub-navbar');
 
-    // Split the description by new lines or full stops (whichever works best for the input format)
-    const servicePoints = servicesDescriptionText.split('\n').map(point => point.trim()).filter(point => point !== "");
+  let scrolled = false;
 
-    // Get the services container where columns will be added
-    const servicesContainer = document.getElementById("services-container");
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
 
-    // Initialize column and add services
-    let currentColumn;
+    if (scrollTop > 10 && !scrolled) {
+      // Hide main navbar
+      mainNavbar.classList.add('hide-main-navbar');
+      // Move sub-navbar up
+      subNavbar.style.top = '40px';
+      scrolled = true;
+    } else if (scrollTop <= 10 && scrolled) {
+      // Show main navbar
+      mainNavbar.classList.remove('hide-main-navbar');
+      // Restore sub-navbar position
+      subNavbar.style.top = '135px';
+      scrolled = false;
+    }
+  });
+</script>
+
+
+
+  <script>
+  let lastScrollTop = 0;
+  const mainNavbar = document.querySelector('.main-navbar');
+
+  window.addEventListener('scroll', function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Scrolling down — hide main navbar
+      mainNavbar.classList.add('hide-main-navbar');
+    } else {
+      // Scrolling up — show main navbar
+      mainNavbar.classList.remove('hide-main-navbar');
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+</script>
+
+  <!-- JavaScript -->
+  <script>
+    // Service boxes generation
+   document.addEventListener('DOMContentLoaded', function() {
+  const servicesDescriptionText = `{{ company.services }}`;
+  const servicePoints = servicesDescriptionText.split('\n')
+    .map(point => point.trim())
+    .filter(point => point !== "");
+
+  if (servicePoints.length > 0) {
+    const serviceRow = document.getElementById("service-row");
+
+    // Clear any existing content
+    serviceRow.innerHTML = '';
+
+    // Create a row container for each group of 3 services
+    let currentRow;
 
     servicePoints.forEach((point, index) => {
-        // Create a new column every 3 services
-        if (index % 3 === 0) {
-            currentColumn = document.createElement("div");
-            currentColumn.className = "col-lg-4 col-md-6 mb-4"; // Bootstrap column classes
-            const ul = document.createElement("ul");
-            ul.style.listStyleType = "none";  // Remove default bullets
-            ul.style.textAlign = "left";
-            currentColumn.appendChild(ul);
-            servicesContainer.appendChild(currentColumn);
-        }
+      // Start a new row for every 3 services or at the beginning
+      if (index % 3 === 0) {
+        currentRow = document.createElement("div");
+        currentRow.className = "row mb-3";
+        serviceRow.appendChild(currentRow);
+      }
 
-        // Add the service point to the current column as a bullet list item
-        const listItem = document.createElement("li");
-        listItem.innerHTML = `<span style="color: #cf2030; font-weight: bold;">➣</span> ${point}.`; // Add bullet point and style
-        currentColumn.querySelector("ul").appendChild(listItem);
+      const column = document.createElement("div");
+      column.className = "col-lg-4 col-md-6 col-sm-12";
+
+      const box = document.createElement("div");
+      box.className = "service-box p-3 mb-3"; // Added padding and margin
+      box.textContent = point;
+
+      column.appendChild(box);
+      currentRow.appendChild(column);
     });
-</script>
-{% endif %}
+  }
 
-<!-- Footer Start -->
-<div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="footer-item d-flex flex-column">
-                    <h4 class="text-dark mb-4">Professional Network Group(PNG)</h4>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="footer-item d-flex flex-column">
-    <h4 class="mb-4 text-dark">Short Links</h4>
-    <a href="{% url 'new_index' %}">Home</a>
-    <a href="{% url 'about' %}">About</a>
-    <a href="{% url 'new_index' %}#service">Service</a>
-    <a href="{% url 'partners_new' %}">Partners</a>
-    <a href="{% url 'events1' %}">Events</a>
-    <a href="{% url 'news_new' %}">News</a>
-    <a href="{% url 'new_index' %}#contact">Contact</a>
-</div>
-            </div>
+  // Hide spinner when page is loaded
+  window.addEventListener('load', function() {
+    const spinner = document.getElementById('spinner');
+    if (spinner) {
+      spinner.style.display = 'none';
+    }
+  });
+});
+  </script>
 
-            <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="footer-item d-flex flex-column">
-                    <h4 class="mb-4 text-dark">Contact Info</h4>
-                    <a href=""><i class="fa fa-map-marker-alt me-2"></i>Chennai</a>
-                    <a href=""><i class="fas fa-envelope me-2"></i> pngmeetup@gmail.com</a>
-                    <a href=""><i class="fas fa-phone me-2"></i> +91 94442 46652</a>
-                    <div class="d-flex align-items-center">
-                        <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i
-                                class="fab fa-instagram"></i></a>
-                        <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i
-                                class="fas fa-globe"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Footer End -->
+  <!-- External Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'landing_static/lib/wow/wow.min.js' %}"></script>
+  <script src="{% static 'landing_static/lib/easing/easing.min.js' %}"></script>
+  <script src="{% static 'landing_static/lib/waypoints/waypoints.min.js' %}"></script>
+  <script src="{% static 'landing_static/lib/counterup/counterup.min.js' %}"></script>
+  <script src="{% static 'landing_static/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'landing_static/lib/lightbox/js/lightbox.min.js' %}"></script>
 
-
-<!-- Copyright Start -->
-<div class="container-fluid copyright py-4">
-    <div class="container">
-        <div class="row g-4 align-items-center">
-            <div class="col-md-6 text-center text-md-start mb-md-0">
-                <span class="text-white"><a href="{% url 'new_index' %}"><i class="fas fa-copyright text-light me-2"></i>PNG</a>, All right reserved.</span>
-            </div>
-            <div class="col-md-6 text-center text-md-end text-white">
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Copyright End -->
-
-<!-- Back to Top -->
-<a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
-
-<!-- JavaScript Libraries -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="{% static 'landing_static/lib/wow/wow.min.js' %}"></script>
-<script src="{% static 'landing_static/lib/easing/easing.min.js' %}"></script>
-<script src="{% static 'landing_static/lib/waypoints/waypoints.min.js' %}"></script>
-<script src="{% static 'landing_static/lib/counterup/counterup.min.js' %}"></script>
-<script src="{% static 'landing_static/lib/owlcarousel/owl.carousel.min.js' %}"></script>
-<script src="{% static 'landing_static/lib/lightbox/js/lightbox.min.js' %}"></script>
-
-<!-- Template Javascript -->
-<script src="{% static 'landing_static/js/main.js' %}"></script>
+  <!-- Template Javascript -->
+  <script src="{% static 'landing_static/js/main.js' %}"></script>
 </body>
-
 </html>
